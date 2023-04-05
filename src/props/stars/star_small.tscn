@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr2dmhatcfavl"]
+
+[ext_resource type="Texture2D" uid="uid://ded4uh7h0w0r7" path="res://Assets/Export/Stars/StarSmall.png" id="1_2pit3"]
+
+[node name="StarSmall" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, 0)
+rotation = 0.785397
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_2pit3")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dblgnskour3hv"]
+
+[ext_resource type="Script" path="res://src/scripts/resources/GameSessionDescription.cs" id="1_2mhdy"]
+[ext_resource type="Resource" uid="uid://erj2eufe5jsx" path="res://src/resources/game_data.tres" id="1_x76xh"]
+[ext_resource type="Resource" uid="uid://b7seadscmsb3" path="res://src/resources/test_session/test_session_mode.tres" id="2_go1yq"]
+[ext_resource type="Resource" uid="uid://pcuobknlexbn" path="res://src/resources/test_session/test_session_level.tres" id="3_7isxh"]
+
+[resource]
+script = ExtResource("1_2mhdy")
+LevelDescription = ExtResource("3_7isxh")
+GameMode = ExtResource("2_go1yq")
+GameData = ExtResource("1_x76xh")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dbgkpwhg7v64"]
+
+[ext_resource type="Texture2D" uid="uid://bbsjknj35b5he" path="res://Assets/Export/RedShip.png" id="1_3i1il"]
+[ext_resource type="Resource" uid="uid://cq520frdostxk" path="res://src/resources/controls/p1_controls_single_con.tres" id="1_3mg78"]
+[ext_resource type="Script" path="res://src/scripts/resources/Player.cs" id="1_n5c27"]
+[ext_resource type="Texture2D" uid="uid://dxcwspmldt6cy" path="res://Assets/Export/Markers/RedMarker.png" id="1_r8g5t"]
+
+[resource]
+script = ExtResource("1_n5c27")
+Texture = ExtResource("1_3i1il")
+MapTexture = ExtResource("1_r8g5t")
+ProjectileColor = Color(0.92549, 0, 0.321569, 1)
+Controls = ExtResource("1_3mg78")

@@ -1,0 +1,988 @@
+[gd_scene load_steps=21 format=3 uid="uid://cvt66titq81r6"]
+
+[ext_resource type="Script" path="res://src/scripts/nodes/LevelScene.cs" id="1_o55qx"]
+[ext_resource type="PackedScene" path="res://src/node_spawner.tscn" id="7_2qq28"]
+[ext_resource type="PackedScene" uid="uid://dkjtwvm45glry" path="res://src/props/Asteroids/Small/asteroid_small_1.tscn" id="8_m6spp"]
+[ext_resource type="PackedScene" uid="uid://cxqrnd0ga2qtn" path="res://src/props/Asteroids/Small/asteroid_small_2.tscn" id="9_8h626"]
+[ext_resource type="PackedScene" uid="uid://d6fw0mntwor8" path="res://src/props/Asteroids/Small/asteroid_small_3.tscn" id="10_g7qqc"]
+[ext_resource type="PackedScene" uid="uid://c38dy31oarm2c" path="res://src/props/Asteroids/Small/asteroid_small_4.tscn" id="11_ijgpi"]
+[ext_resource type="PackedScene" uid="uid://b2b6v3yvxd6e5" path="res://src/props/Asteroids/Small/asteroid_small_5.tscn" id="12_xv3pm"]
+[ext_resource type="PackedScene" uid="uid://c4vnkw6q4is2c" path="res://src/props/Asteroids/Small/asteroid_small_6.tscn" id="13_dgkid"]
+[ext_resource type="PackedScene" uid="uid://vbs3r1wkgq8g" path="res://src/props/Asteroids/Small/asteroid_small_7.tscn" id="14_p6moy"]
+[ext_resource type="PackedScene" uid="uid://qnssnvsda0d7" path="res://src/props/Asteroids/Small/asteroid_small_8.tscn" id="15_ij7od"]
+[ext_resource type="PackedScene" uid="uid://cqnu34i61r5xg" path="res://src/props/Asteroids/Small/asteroid_small_9.tscn" id="16_c61pn"]
+[ext_resource type="PackedScene" uid="uid://cct8f7cw5l72v" path="res://src/props/Asteroids/Medium/asteroid_medium_1.tscn" id="17_r312y"]
+[ext_resource type="PackedScene" uid="uid://bsr760xd0auyy" path="res://src/props/Asteroids/Medium/asteroid_medium_2.tscn" id="18_05gb2"]
+[ext_resource type="PackedScene" uid="uid://bro4tnwkaaith" path="res://src/props/Asteroids/Medium/asteroid_medium_3.tscn" id="19_orti8"]
+[ext_resource type="PackedScene" uid="uid://d3qm17m82lrt0" path="res://src/props/Asteroids/Medium/asteroid_medium_4.tscn" id="20_v5yva"]
+[ext_resource type="PackedScene" uid="uid://baepsjyf6ts15" path="res://src/props/Asteroids/Medium/asteroid_medium_5.tscn" id="21_bkmqn"]
+[ext_resource type="PackedScene" uid="uid://ytbyab6pwhdd" path="res://src/props/Asteroids/Medium/asteroid_medium_6.tscn" id="22_khctw"]
+[ext_resource type="PackedScene" uid="uid://ciig6giw8jaj1" path="res://src/props/Asteroids/Large/asteroid_large_1.tscn" id="23_akso8"]
+[ext_resource type="PackedScene" uid="uid://dneeoh5vf5rkm" path="res://src/props/Asteroids/Large/asteroid_large_2.tscn" id="24_7yshp"]
+[ext_resource type="PackedScene" uid="uid://bv0a0r2jfxhyc" path="res://src/props/Asteroids/Large/asteroid_large_3.tscn" id="25_j6y3f"]
+
+[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("Player1SpawnPoint", "Player2SpawnPoint", "PlayerParent", "PickupLocationsParent", "ProjectilesParent")]
+script = ExtResource("1_o55qx")
+Player1SpawnPoint = NodePath("Spawnpoints/Player1Spawnpoint")
+Player2SpawnPoint = NodePath("Spawnpoints/Player2Spawnpoint")
+PlayerParent = NodePath("GravityAffected")
+PickupLocationsParent = NodePath("PickupLocations")
+ProjectilesParent = NodePath("Projectiles")
+
+[node name="GravityAffected" type="Node2D" parent="."]
+
+[node name="Asteroids" type="Node2D" parent="."]
+
+[node name="NodeSpawner" parent="Asteroids" instance=ExtResource("7_2qq28")]
+Width = 9500.0
+Height = 9500.0
+AmountX = 15
+AmountY = 15
+Center = true
+Seed = 4
+Randomness = 0.75
+Scenes = [ExtResource("8_m6spp"), ExtResource("9_8h626"), ExtResource("10_g7qqc"), ExtResource("11_ijgpi"), ExtResource("12_xv3pm"), ExtResource("13_dgkid"), ExtResource("14_p6moy"), ExtResource("15_ij7od"), ExtResource("16_c61pn"), ExtResource("17_r312y"), ExtResource("18_05gb2"), ExtResource("19_orti8"), ExtResource("20_v5yva"), ExtResource("21_bkmqn"), ExtResource("22_khctw"), ExtResource("23_akso8"), ExtResource("24_7yshp"), ExtResource("25_j6y3f")]
+
+[node name="AsteroidSmall7_0_0" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(-4352.43, -4243.25)
+rotation = 0.418984
+
+[node name="AsteroidSmall8_0_1" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(-4360.75, -3690.23)
+rotation = 2.92741
+
+[node name="AsteroidSmall3_0_2" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(-4470.95, -2936.28)
+rotation = 3.69622
+
+[node name="AsteroidLarge1_0_3" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(-4476.38, -2764.88)
+rotation = 5.7362
+
+[node name="AsteroidLarge3_0_4" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(-4302.46, -1845.47)
+rotation = 5.14168
+
+[node name="@AsteroidSmall5_0_5@95321" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(-4312.5, -1159.73)
+rotation = 6.08018
+
+[node name="AsteroidMedium1_0_6" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(-4638.8, -714.516)
+rotation = 5.28681
+
+[node name="AsteroidMedium5_0_7" parent="Asteroids/NodeSpawner" instance=ExtResource("21_bkmqn")]
+position = Vector2(-4242.92, 200.004)
+rotation = 5.46751
+
+[node name="AsteroidSmall2_0_8" parent="Asteroids/NodeSpawner" instance=ExtResource("9_8h626")]
+position = Vector2(-4611.81, 657.108)
+rotation = 1.1932
+
+[node name="AsteroidSmall2_0_9" parent="Asteroids/NodeSpawner" instance=ExtResource("9_8h626")]
+position = Vector2(-4540.09, 1436)
+rotation = 1.76091
+
+[node name="AsteroidSmall6_0_10" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(-4245.01, 2135.55)
+rotation = 2.02373
+
+[node name="AsteroidMedium1_0_11" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(-4468.35, 2609.09)
+rotation = 5.74306
+
+[node name="AsteroidSmall8_0_12" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(-4600.39, 3251.75)
+rotation = 1.11357
+
+[node name="AsteroidLarge3_0_13" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(-4387.14, 3583.65)
+rotation = 2.01864
+
+[node name="AsteroidMedium4_0_14" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(-4443.04, 4657.64)
+rotation = 1.63414
+
+[node name="AsteroidSmall5_1_0" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(-3905.8, -4511.38)
+rotation = 3.39685
+
+[node name="AsteroidSmall1_1_1" parent="Asteroids/NodeSpawner" instance=ExtResource("8_m6spp")]
+position = Vector2(-3877.07, -3812.63)
+rotation = 3.19767
+
+[node name="AsteroidSmall3_1_2" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(-3990.05, -2964.45)
+rotation = 5.46018
+
+[node name="AsteroidSmall9_1_3" parent="Asteroids/NodeSpawner" instance=ExtResource("16_c61pn")]
+position = Vector2(-3782.46, -2360.96)
+rotation = 5.4689
+
+[node name="AsteroidMedium4_1_4" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(-3751.01, -1816.49)
+rotation = 3.75635
+
+[node name="AsteroidSmall4_1_5" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(-3780.87, -1227.21)
+rotation = 0.268919
+
+[node name="AsteroidMedium2_1_6" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(-3610.11, -798.385)
+rotation = 3.10059
+
+[node name="AsteroidMedium4_1_7" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(-3791.36, 83.1154)
+rotation = 1.33304
+
+[node name="AsteroidLarge2_1_8" parent="Asteroids/NodeSpawner" instance=ExtResource("24_7yshp")]
+position = Vector2(-3634.93, 814.201)
+rotation = 3.76848
+
+[node name="AsteroidSmall2_1_9" parent="Asteroids/NodeSpawner" instance=ExtResource("9_8h626")]
+position = Vector2(-3714.07, 1155.5)
+rotation = 1.24211
+
+[node name="AsteroidSmall9_1_10" parent="Asteroids/NodeSpawner" instance=ExtResource("16_c61pn")]
+position = Vector2(-3715.23, 2008.96)
+rotation = 4.34646
+
+[node name="AsteroidLarge2_1_11" parent="Asteroids/NodeSpawner" instance=ExtResource("24_7yshp")]
+position = Vector2(-3584.23, 2404.76)
+rotation = 0.262647
+
+[node name="@AsteroidMedium5_1_12@95322" parent="Asteroids/NodeSpawner" instance=ExtResource("21_bkmqn")]
+position = Vector2(-3634.42, 3176.55)
+rotation = 5.39989
+
+[node name="AsteroidSmall2_1_13" parent="Asteroids/NodeSpawner" instance=ExtResource("9_8h626")]
+position = Vector2(-3776.94, 3757.53)
+rotation = 3.49763
+
+[node name="AsteroidMedium3_1_14" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(-3747.48, 4420.93)
+rotation = 2.88768
+
+[node name="AsteroidMedium6_2_0" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(-3317.61, -4273.81)
+rotation = 2.3773
+
+[node name="AsteroidMedium2_2_1" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(-3039.74, -3873.79)
+rotation = 3.8652
+
+[node name="AsteroidSmall6_2_2" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(-2944.25, -3182.56)
+rotation = 0.893353
+
+[node name="AsteroidMedium3_2_3" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(-3001.6, -2736.16)
+rotation = 0.481846
+
+[node name="AsteroidMedium1_2_4" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(-3170.63, -1665.31)
+rotation = 3.58694
+
+[node name="AsteroidSmall9_2_5" parent="Asteroids/NodeSpawner" instance=ExtResource("16_c61pn")]
+position = Vector2(-2983.99, -1382.21)
+rotation = 0.49221
+
+[node name="AsteroidLarge3_2_6" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(-3050.95, -646.013)
+rotation = 4.63395
+
+[node name="AsteroidMedium2_2_7" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(-3075.07, 226.985)
+rotation = 3.68767
+
+[node name="AsteroidMedium6_2_8" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(-3349.67, 818.979)
+rotation = 0.946721
+
+[node name="AsteroidSmall2_2_9" parent="Asteroids/NodeSpawner" instance=ExtResource("9_8h626")]
+position = Vector2(-3071.12, 1269.76)
+rotation = 2.07988
+
+[node name="@AsteroidSmall2_2_10@95323" parent="Asteroids/NodeSpawner" instance=ExtResource("9_8h626")]
+position = Vector2(-3306.97, 2008.98)
+rotation = 1.45918
+
+[node name="AsteroidMedium1_2_11" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(-3148.06, 2650.91)
+rotation = 0.430884
+
+[node name="@AsteroidSmall8_2_12@95324" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(-3075.35, 3074.2)
+rotation = 5.87189
+
+[node name="AsteroidMedium2_2_13" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(-3159.99, 3605.76)
+rotation = 4.25277
+
+[node name="AsteroidSmall1_2_14" parent="Asteroids/NodeSpawner" instance=ExtResource("8_m6spp")]
+position = Vector2(-3081.27, 4557.1)
+rotation = 4.15918
+
+[node name="AsteroidMedium3_3_0" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(-2736.48, -4308.05)
+rotation = 5.90066
+
+[node name="AsteroidSmall5_3_1" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(-2592.08, -3591.73)
+rotation = 3.55362
+
+[node name="AsteroidMedium6_3_2" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(-2423.91, -3007.61)
+rotation = 5.07801
+
+[node name="AsteroidSmall5_3_3" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(-2613.63, -2565.56)
+rotation = 0.804105
+
+[node name="AsteroidSmall5_3_4" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(-2390.49, -1918.72)
+rotation = 2.61331
+
+[node name="AsteroidMedium6_3_5" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(-2375.29, -1215.86)
+rotation = 4.12089
+
+[node name="@AsteroidMedium1_3_6@95325" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(-2596.94, -656.991)
+rotation = 1.64899
+
+[node name="AsteroidLarge1_3_7" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(-2391.83, -220.342)
+rotation = 5.54096
+
+[node name="AsteroidSmall6_3_8" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(-2689.69, 464.555)
+rotation = 4.6011
+
+[node name="AsteroidLarge2_3_9" parent="Asteroids/NodeSpawner" instance=ExtResource("24_7yshp")]
+position = Vector2(-2704.91, 1153.17)
+rotation = 1.21667
+
+[node name="AsteroidMedium1_3_10" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(-2321.86, 1874.06)
+rotation = 2.51122
+
+[node name="AsteroidSmall9_3_11" parent="Asteroids/NodeSpawner" instance=ExtResource("16_c61pn")]
+position = Vector2(-2498.09, 2627.22)
+rotation = 2.34233
+
+[node name="AsteroidLarge2_3_12" parent="Asteroids/NodeSpawner" instance=ExtResource("24_7yshp")]
+position = Vector2(-2384.35, 3354.87)
+rotation = 1.84941
+
+[node name="AsteroidLarge1_3_13" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(-2440.9, 3917.18)
+rotation = 1.3383
+
+[node name="AsteroidMedium1_3_14" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(-2748.65, 4329.78)
+rotation = 0.132051
+
+[node name="AsteroidLarge3_4_0" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(-1935.36, -4260.43)
+rotation = 2.99832
+
+[node name="AsteroidMedium5_4_1" parent="Asteroids/NodeSpawner" instance=ExtResource("21_bkmqn")]
+position = Vector2(-1712.17, -3747.66)
+rotation = 4.61714
+
+[node name="AsteroidSmall7_4_2" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(-1800.93, -3363.05)
+rotation = 2.15951
+
+[node name="AsteroidMedium1_4_3" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(-2125.52, -2425.99)
+rotation = 0.379955
+
+[node name="AsteroidSmall6_4_4" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(-1791.32, -1665.65)
+rotation = 0.118736
+
+[node name="AsteroidSmall1_4_5" parent="Asteroids/NodeSpawner" instance=ExtResource("8_m6spp")]
+position = Vector2(-1821.31, -1380.8)
+rotation = 1.17425
+
+[node name="AsteroidSmall6_4_6" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(-1862.92, -447.507)
+rotation = 2.16494
+
+[node name="AsteroidMedium1_4_7" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(-2035.65, 145.363)
+rotation = 3.24621
+
+[node name="AsteroidMedium4_4_8" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(-1755.16, 537.541)
+rotation = 5.29232
+
+[node name="AsteroidMedium5_4_9" parent="Asteroids/NodeSpawner" instance=ExtResource("21_bkmqn")]
+position = Vector2(-1855.07, 1474.24)
+rotation = 5.74186
+
+[node name="AsteroidMedium3_4_10" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(-1899.74, 1664.72)
+rotation = 0.314547
+
+[node name="AsteroidSmall3_4_11" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(-2094.34, 2360.13)
+rotation = 6.2379
+
+[node name="AsteroidMedium6_4_12" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(-1919.54, 2959.37)
+rotation = 0.563997
+
+[node name="AsteroidSmall3_4_13" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(-1861.84, 3638.54)
+rotation = 6.2325
+
+[node name="AsteroidMedium6_4_14" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(-2007.91, 4486.48)
+rotation = 1.45325
+
+[node name="AsteroidSmall7_5_0" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(-1147.4, -4269.33)
+rotation = 3.6448
+
+[node name="AsteroidLarge1_5_1" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(-1382.13, -3736.05)
+rotation = 1.30471
+
+[node name="AsteroidSmall3_5_2" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(-1258.83, -3282.19)
+rotation = 6.09377
+
+[node name="AsteroidMedium6_5_3" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(-1268.47, -2681.76)
+rotation = 0.48111
+
+[node name="AsteroidSmall8_5_4" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(-1375.57, -1924.03)
+rotation = 3.98201
+
+[node name="AsteroidMedium6_5_5" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(-1385.68, -1346.44)
+rotation = 2.03326
+
+[node name="AsteroidLarge3_5_6" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(-1139.7, -682.106)
+rotation = 2.21726
+
+[node name="AsteroidMedium3_5_7" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(-1181.6, 54.9023)
+rotation = 1.94093
+
+[node name="AsteroidSmall7_5_8" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(-1057.42, 430.601)
+rotation = 6.22492
+
+[node name="AsteroidMedium4_5_9" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(-1147.57, 1460.23)
+rotation = 4.10139
+
+[node name="AsteroidLarge2_5_10" parent="Asteroids/NodeSpawner" instance=ExtResource("24_7yshp")]
+position = Vector2(-1250.56, 1866.86)
+rotation = 0.5007
+
+[node name="@AsteroidLarge1_5_11@95326" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(-1398.89, 2301.09)
+rotation = 0.105216
+
+[node name="AsteroidSmall7_5_12" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(-1252.12, 3191.39)
+rotation = 5.67111
+
+[node name="AsteroidSmall5_5_13" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(-1035.73, 3648.4)
+rotation = 5.99285
+
+[node name="@AsteroidSmall9_5_14@95327" parent="Asteroids/NodeSpawner" instance=ExtResource("16_c61pn")]
+position = Vector2(-1169.73, 4282.18)
+rotation = 1.17732
+
+[node name="AsteroidSmall4_6_0" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(-704.032, -4338.21)
+rotation = 4.42906
+
+[node name="AsteroidMedium3_6_1" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(-685.999, -3962.87)
+rotation = 3.50089
+
+[node name="AsteroidMedium4_6_2" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(-476.597, -3105.62)
+rotation = 1.67133
+
+[node name="AsteroidSmall6_6_3" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(-761.082, -2637.89)
+rotation = 5.93911
+
+[node name="AsteroidLarge2_6_4" parent="Asteroids/NodeSpawner" instance=ExtResource("24_7yshp")]
+position = Vector2(-563.853, -1949.28)
+rotation = 5.03037
+
+[node name="AsteroidSmall7_6_5" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(-858.174, -1365.34)
+rotation = 4.05294
+
+[node name="AsteroidLarge3_6_6" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(-528.143, -477.175)
+rotation = 5.48744
+
+[node name="AsteroidLarge1_6_7" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(-486.79, 71.5126)
+rotation = 3.82403
+
+[node name="AsteroidMedium2_6_8" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(-592.032, 858.775)
+rotation = 4.14497
+
+[node name="AsteroidMedium4_6_9" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(-773.109, 1161.91)
+rotation = 6.02045
+
+[node name="AsteroidMedium4_6_10" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(-414.607, 1958.85)
+rotation = 2.60764
+
+[node name="AsteroidLarge1_6_11" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(-700.06, 2751.99)
+rotation = 1.80425
+
+[node name="AsteroidSmall5_6_12" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(-598.568, 2954.28)
+rotation = 4.16666
+
+[node name="@AsteroidMedium5_6_13@95328" parent="Asteroids/NodeSpawner" instance=ExtResource("21_bkmqn")]
+position = Vector2(-856.625, 3701.4)
+rotation = 5.93561
+
+[node name="@AsteroidSmall8_6_14@95329" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(-488.485, 4645.38)
+rotation = 1.35469
+
+[node name="AsteroidMedium4_7_0" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(-230.678, -4615.75)
+rotation = 6.12281
+
+[node name="AsteroidLarge3_7_1" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(30.298, -3930.49)
+rotation = 4.81229
+
+[node name="AsteroidLarge3_7_2" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(203.705, -2982.61)
+rotation = 2.63094
+
+[node name="AsteroidMedium2_7_3" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(-151.569, -2333.26)
+rotation = 3.80087
+
+[node name="AsteroidSmall1_7_4" parent="Asteroids/NodeSpawner" instance=ExtResource("8_m6spp")]
+position = Vector2(-65.1694, -2022.21)
+rotation = 1.26066
+
+[node name="AsteroidMedium3_7_5" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(195.579, -1121.28)
+rotation = 1.0441
+
+[node name="AsteroidMedium2_7_6" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(88.7069, -460.436)
+rotation = 0.447186
+
+[node name="AsteroidSmall1_7_7" parent="Asteroids/NodeSpawner" instance=ExtResource("8_m6spp")]
+position = Vector2(-192.437, 53.415)
+rotation = 2.86259
+
+[node name="AsteroidSmall2_7_8" parent="Asteroids/NodeSpawner" instance=ExtResource("9_8h626")]
+position = Vector2(232.395, 550.167)
+rotation = 2.83101
+
+[node name="AsteroidSmall7_7_9" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(-150.885, 1465.9)
+rotation = 1.07808
+
+[node name="AsteroidMedium3_7_10" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(-97.4432, 2116.63)
+rotation = 5.08315
+
+[node name="AsteroidMedium6_7_11" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(77.8726, 2505.92)
+rotation = 4.84274
+
+[node name="AsteroidSmall8_7_12" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(-12.4952, 3335.88)
+rotation = 1.84363
+
+[node name="AsteroidMedium2_7_13" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(-197.416, 3671.75)
+rotation = 4.24193
+
+[node name="@AsteroidLarge1_7_14@95330" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(112.549, 4631.66)
+rotation = 6.13079
+
+[node name="AsteroidLarge1_8_0" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(493.693, -4482.97)
+rotation = 3.17645
+
+[node name="AsteroidLarge3_8_1" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(448.951, -3668.83)
+rotation = 3.59734
+
+[node name="AsteroidLarge1_8_2" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(509.969, -2976.84)
+rotation = 1.61349
+
+[node name="AsteroidSmall3_8_3" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(837.578, -2373.13)
+rotation = 2.29804
+
+[node name="AsteroidMedium1_8_4" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(488.928, -1820.98)
+rotation = 3.58354
+
+[node name="AsteroidMedium2_8_5" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(702.807, -1203.67)
+rotation = 5.8576
+
+[node name="AsteroidSmall2_8_6" parent="Asteroids/NodeSpawner" instance=ExtResource("9_8h626")]
+position = Vector2(649.828, -439.694)
+rotation = 3.61531
+
+[node name="AsteroidMedium5_8_7" parent="Asteroids/NodeSpawner" instance=ExtResource("21_bkmqn")]
+position = Vector2(589.89, -108.92)
+rotation = 0.0266622
+
+[node name="AsteroidSmall4_8_8" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(718.619, 593.807)
+rotation = 1.29559
+
+[node name="AsteroidSmall4_8_9" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(818.521, 1048.74)
+rotation = 2.48841
+
+[node name="AsteroidMedium5_8_10" parent="Asteroids/NodeSpawner" instance=ExtResource("21_bkmqn")]
+position = Vector2(652.329, 1866.48)
+rotation = 3.09239
+
+[node name="AsteroidMedium3_8_11" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(444.563, 2492.29)
+rotation = 3.23695
+
+[node name="AsteroidSmall3_8_12" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(771.095, 3096.98)
+rotation = 0.116102
+
+[node name="AsteroidMedium2_8_13" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(614.448, 3694.22)
+rotation = 4.94266
+
+[node name="AsteroidSmall9_8_14" parent="Asteroids/NodeSpawner" instance=ExtResource("16_c61pn")]
+position = Vector2(572.67, 4663.66)
+rotation = 5.45027
+
+[node name="AsteroidSmall4_9_0" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(1053.79, -4551.81)
+rotation = 5.24504
+
+[node name="AsteroidSmall4_9_1" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(1093.91, -4003.23)
+rotation = 1.68671
+
+[node name="@AsteroidSmall4_9_2@95331" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(1218.49, -3150.13)
+rotation = 6.18078
+
+[node name="AsteroidSmall3_9_3" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(1276.84, -2334.49)
+rotation = 2.09843
+
+[node name="AsteroidSmall5_9_4" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(1404.86, -1799.59)
+rotation = 2.67708
+
+[node name="AsteroidSmall6_9_5" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(1423.94, -1232.89)
+rotation = 3.31896
+
+[node name="AsteroidSmall3_9_6" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(1187.91, -860.306)
+rotation = 1.05144
+
+[node name="AsteroidLarge3_9_7" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(1356.82, -110.953)
+rotation = 2.51917
+
+[node name="AsteroidMedium4_9_8" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(1295.75, 647.027)
+rotation = 4.93896
+
+[node name="AsteroidSmall7_9_9" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(1044.85, 1266.63)
+rotation = 0.503677
+
+[node name="AsteroidSmall4_9_10" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(1067.44, 1708)
+rotation = 2.61788
+
+[node name="AsteroidSmall4_9_11" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(1208.79, 2441.84)
+rotation = 4.39285
+
+[node name="AsteroidLarge2_9_12" parent="Asteroids/NodeSpawner" instance=ExtResource("24_7yshp")]
+position = Vector2(1457.02, 3274.66)
+rotation = 5.94129
+
+[node name="AsteroidMedium6_9_13" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(1170.49, 3607.22)
+rotation = 3.6743
+
+[node name="AsteroidMedium3_9_14" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(1275.27, 4333.66)
+rotation = 0.899364
+
+[node name="AsteroidLarge3_10_0" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(1800.88, -4404.5)
+rotation = 1.37321
+
+[node name="AsteroidSmall6_10_1" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(2068.16, -3873.85)
+rotation = 1.36042
+
+[node name="AsteroidLarge2_10_2" parent="Asteroids/NodeSpawner" instance=ExtResource("24_7yshp")]
+position = Vector2(1785.55, -3206.63)
+rotation = 4.44104
+
+[node name="AsteroidLarge1_10_3" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(1758.6, -2561.18)
+rotation = 4.32876
+
+[node name="AsteroidMedium6_10_4" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(1986.03, -2103.13)
+rotation = 4.95345
+
+[node name="AsteroidSmall7_10_5" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(1751.48, -1060.73)
+rotation = 4.87957
+
+[node name="AsteroidSmall3_10_6" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(1917.48, -654.956)
+rotation = 4.04259
+
+[node name="AsteroidLarge1_10_7" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(1695.57, 158.108)
+rotation = 3.70077
+
+[node name="AsteroidMedium2_10_8" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(1991.49, 796.456)
+rotation = 3.24021
+
+[node name="AsteroidSmall6_10_9" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(1792.09, 1498.8)
+rotation = 4.63247
+
+[node name="AsteroidSmall2_10_10" parent="Asteroids/NodeSpawner" instance=ExtResource("9_8h626")]
+position = Vector2(1852.73, 2009.02)
+rotation = 5.67225
+
+[node name="AsteroidSmall8_10_11" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(1947.65, 2497.01)
+rotation = 2.8872
+
+[node name="AsteroidSmall3_10_12" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(2115.41, 3200.79)
+rotation = 2.37673
+
+[node name="AsteroidSmall1_10_13" parent="Asteroids/NodeSpawner" instance=ExtResource("8_m6spp")]
+position = Vector2(1723.11, 3779.87)
+rotation = 1.49289
+
+[node name="AsteroidMedium5_10_14" parent="Asteroids/NodeSpawner" instance=ExtResource("21_bkmqn")]
+position = Vector2(2050.92, 4402.03)
+rotation = 3.17796
+
+[node name="AsteroidLarge1_11_0" parent="Asteroids/NodeSpawner" instance=ExtResource("23_akso8")]
+position = Vector2(2472.21, -4326.06)
+rotation = 5.31173
+
+[node name="AsteroidSmall8_11_1" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(2735.38, -4005.64)
+rotation = 4.42481
+
+[node name="AsteroidSmall5_11_2" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(2684.87, -2985.67)
+rotation = 4.12478
+
+[node name="AsteroidSmall6_11_3" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(2479.82, -2383.27)
+rotation = 1.59078
+
+[node name="AsteroidMedium6_11_4" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(2519.24, -2137.11)
+rotation = 1.96253
+
+[node name="AsteroidSmall8_11_5" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(2622.03, -1238.11)
+rotation = 0.289191
+
+[node name="AsteroidSmall4_11_6" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(2600.74, -654.4)
+rotation = 0.124331
+
+[node name="AsteroidMedium1_11_7" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(2521.72, -76.0009)
+rotation = 4.23277
+
+[node name="AsteroidSmall6_11_8" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(2739.26, 640.246)
+rotation = 4.57402
+
+[node name="AsteroidSmall6_11_9" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(2508.26, 1478.04)
+rotation = 3.23309
+
+[node name="AsteroidSmall6_11_10" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(2606.99, 1767.11)
+rotation = 5.04488
+
+[node name="AsteroidLarge2_11_11" parent="Asteroids/NodeSpawner" instance=ExtResource("24_7yshp")]
+position = Vector2(2363.89, 2692.72)
+rotation = 0.824427
+
+[node name="AsteroidSmall4_11_12" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(2619.27, 3321.45)
+rotation = 1.50247
+
+[node name="AsteroidMedium1_11_13" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(2581.24, 3596.87)
+rotation = 0.3545
+
+[node name="AsteroidSmall4_11_14" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(2705.75, 4469.12)
+rotation = 5.81498
+
+[node name="AsteroidMedium3_12_0" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(3316.23, -4402.37)
+rotation = 0.608319
+
+[node name="AsteroidSmall6_12_1" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(2962.23, -3641.23)
+rotation = 3.54953
+
+[node name="@AsteroidSmall8_12_2@95332" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(3258.98, -3265.99)
+rotation = 4.93061
+
+[node name="AsteroidMedium4_12_3" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(3244.08, -2366.83)
+rotation = 4.04251
+
+[node name="AsteroidSmall3_12_4" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(3345.82, -1946.94)
+rotation = 0.861149
+
+[node name="AsteroidSmall8_12_5" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(3254.92, -1443.26)
+rotation = 0.358311
+
+[node name="AsteroidSmall7_12_6" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(3087.06, -401.826)
+rotation = 4.78761
+
+[node name="AsteroidMedium3_12_7" parent="Asteroids/NodeSpawner" instance=ExtResource("19_orti8")]
+position = Vector2(3027.47, 178.078)
+rotation = 3.59305
+
+[node name="AsteroidSmall8_12_8" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(3327.44, 456.778)
+rotation = 5.93253
+
+[node name="AsteroidMedium4_12_9" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(3360.51, 1296.62)
+rotation = 4.58705
+
+[node name="AsteroidMedium6_12_10" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(3247.82, 1809.43)
+rotation = 1.61451
+
+[node name="AsteroidSmall8_12_11" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(3392.31, 2320.41)
+rotation = 0.637389
+
+[node name="AsteroidMedium6_12_12" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(3283.94, 3015.83)
+rotation = 0.458641
+
+[node name="AsteroidSmall6_12_13" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(3230.78, 3703.43)
+rotation = 5.62232
+
+[node name="@AsteroidSmall5_12_14@95333" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(3316.55, 4644.01)
+rotation = 3.01556
+
+[node name="AsteroidLarge2_13_0" parent="Asteroids/NodeSpawner" instance=ExtResource("24_7yshp")]
+position = Vector2(3799.72, -4656.93)
+rotation = 3.29283
+
+[node name="AsteroidMedium1_13_1" parent="Asteroids/NodeSpawner" instance=ExtResource("17_r312y")]
+position = Vector2(3869.53, -3775.33)
+rotation = 4.56918
+
+[node name="AsteroidMedium5_13_2" parent="Asteroids/NodeSpawner" instance=ExtResource("21_bkmqn")]
+position = Vector2(3659.63, -3007.13)
+rotation = 1.2198
+
+[node name="AsteroidMedium5_13_3" parent="Asteroids/NodeSpawner" instance=ExtResource("21_bkmqn")]
+position = Vector2(3638.71, -2762.83)
+rotation = 0.92361
+
+[node name="AsteroidSmall6_13_4" parent="Asteroids/NodeSpawner" instance=ExtResource("13_dgkid")]
+position = Vector2(3889.28, -1831.63)
+rotation = 4.23818
+
+[node name="AsteroidSmall2_13_5" parent="Asteroids/NodeSpawner" instance=ExtResource("9_8h626")]
+position = Vector2(3881.42, -1041.89)
+rotation = 0.568836
+
+[node name="AsteroidSmall4_13_6" parent="Asteroids/NodeSpawner" instance=ExtResource("11_ijgpi")]
+position = Vector2(4036.94, -478.064)
+rotation = 3.16753
+
+[node name="AsteroidMedium6_13_7" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(3628.86, 95.5734)
+rotation = 2.26206
+
+[node name="AsteroidSmall3_13_8" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(3922.62, 410.24)
+rotation = 3.98152
+
+[node name="AsteroidSmall1_13_9" parent="Asteroids/NodeSpawner" instance=ExtResource("8_m6spp")]
+position = Vector2(3987.09, 1357.96)
+rotation = 3.91909
+
+[node name="AsteroidSmall5_13_10" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(3792.07, 1853.8)
+rotation = 1.50946
+
+[node name="AsteroidSmall2_13_11" parent="Asteroids/NodeSpawner" instance=ExtResource("9_8h626")]
+position = Vector2(3961.23, 2731.15)
+rotation = 4.6524
+
+[node name="AsteroidSmall7_13_12" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(3873.06, 2976.69)
+rotation = 0.415733
+
+[node name="AsteroidSmall7_13_13" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(3892.85, 3625.58)
+rotation = 6.21077
+
+[node name="AsteroidSmall5_13_14" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(3570.95, 4365.08)
+rotation = 0.5831
+
+[node name="AsteroidMedium5_14_0" parent="Asteroids/NodeSpawner" instance=ExtResource("21_bkmqn")]
+position = Vector2(4206.02, -4502.52)
+rotation = 2.25255
+
+[node name="AsteroidSmall5_14_1" parent="Asteroids/NodeSpawner" instance=ExtResource("12_xv3pm")]
+position = Vector2(4282.02, -3605.76)
+rotation = 3.52049
+
+[node name="AsteroidSmall8_14_2" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(4667.57, -3281.08)
+rotation = 4.69975
+
+[node name="AsteroidSmall9_14_3" parent="Asteroids/NodeSpawner" instance=ExtResource("16_c61pn")]
+position = Vector2(4451.49, -2357.49)
+rotation = 6.1313
+
+[node name="@AsteroidSmall8_14_4@95334" parent="Asteroids/NodeSpawner" instance=ExtResource("15_ij7od")]
+position = Vector2(4646.29, -1673.76)
+rotation = 5.05287
+
+[node name="AsteroidMedium2_14_5" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(4594.51, -1151.41)
+rotation = 2.24967
+
+[node name="AsteroidMedium4_14_6" parent="Asteroids/NodeSpawner" instance=ExtResource("20_v5yva")]
+position = Vector2(4205.12, -816.471)
+rotation = 2.62739
+
+[node name="AsteroidMedium2_14_7" parent="Asteroids/NodeSpawner" instance=ExtResource("18_05gb2")]
+position = Vector2(4521.11, 60.7949)
+rotation = 4.90698
+
+[node name="AsteroidSmall9_14_8" parent="Asteroids/NodeSpawner" instance=ExtResource("16_c61pn")]
+position = Vector2(4292.33, 655.57)
+rotation = 0.194035
+
+[node name="AsteroidSmall9_14_9" parent="Asteroids/NodeSpawner" instance=ExtResource("16_c61pn")]
+position = Vector2(4336.89, 1344.41)
+rotation = 3.98421
+
+[node name="AsteroidSmall3_14_10" parent="Asteroids/NodeSpawner" instance=ExtResource("10_g7qqc")]
+position = Vector2(4402.83, 2114.59)
+rotation = 4.74876
+
+[node name="AsteroidSmall9_14_11" parent="Asteroids/NodeSpawner" instance=ExtResource("16_c61pn")]
+position = Vector2(4617.62, 2387.35)
+rotation = 4.43622
+
+[node name="AsteroidLarge3_14_12" parent="Asteroids/NodeSpawner" instance=ExtResource("25_j6y3f")]
+position = Vector2(4486.96, 2960.16)
+rotation = 0.589291
+
+[node name="AsteroidSmall7_14_13" parent="Asteroids/NodeSpawner" instance=ExtResource("14_p6moy")]
+position = Vector2(4323.9, 3782.81)
+rotation = 1.01543
+
+[node name="AsteroidMedium6_14_14" parent="Asteroids/NodeSpawner" instance=ExtResource("22_khctw")]
+position = Vector2(4384.5, 4237.24)
+rotation = 5.03536
+
+[node name="PickupLocations" type="Node2D" parent="."]
+
+[node name="Pickup" type="Node2D" parent="PickupLocations"]
+position = Vector2(-3860, -3247)
+
+[node name="Pickup2" type="Node2D" parent="PickupLocations"]
+position = Vector2(-3474, -2894)
+
+[node name="Pickup3" type="Node2D" parent="PickupLocations"]
+position = Vector2(-3487, -2645)
+
+[node name="Pickup4" type="Node2D" parent="PickupLocations"]
+position = Vector2(-3526, -2716)
+
+[node name="Pickup5" type="Node2D" parent="PickupLocations"]
+position = Vector2(-3461, -2671)
+
+[node name="Pickup6" type="Node2D" parent="PickupLocations"]
+position = Vector2(-3370, -2577)
+
+[node name="Pickup7" type="Node2D" parent="PickupLocations"]
+position = Vector2(-3406, -2757)
+
+[node name="Pickup8" type="Node2D" parent="PickupLocations"]
+position = Vector2(-3365, -2690)
+
+[node name="Pickup9" type="Node2D" parent="PickupLocations"]
+position = Vector2(-3426, -2578)
+
+[node name="Pickup10" type="Node2D" parent="PickupLocations"]
+position = Vector2(-3400, -2477)
+
+[node name="Spawnpoints" type="Node2D" parent="."]
+
+[node name="Player1Spawnpoint" type="Node2D" parent="Spawnpoints"]
+position = Vector2(-3988, -4089)
+rotation = 2.35619
+
+[node name="Player2Spawnpoint" type="Node2D" parent="Spawnpoints"]
+position = Vector2(-2491, -2130)
+rotation = -0.785398
+
+[node name="Projectiles" type="Node2D" parent="."]

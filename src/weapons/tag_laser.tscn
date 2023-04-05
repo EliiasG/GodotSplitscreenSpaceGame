@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://j5735l7soc84"]
+
+[ext_resource type="PackedScene" uid="uid://df5u6sfrgwsdl" path="res://src/weapons/single_laser.tscn" id="1_k3t52"]
+
+[node name="TagLaser" instance=ExtResource("1_k3t52")]
+UseAmmo = false
+MaxAmmo = 0
+Repeat = true
+ReloadTime = 0.3

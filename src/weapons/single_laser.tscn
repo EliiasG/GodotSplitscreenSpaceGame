@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://df5u6sfrgwsdl"]
+
+[ext_resource type="Script" path="res://src/scripts/nodes/weapons/Weapon.cs" id="1_awxm5"]
+[ext_resource type="Script" path="res://src/scripts/nodes/weapons/shooters/LaserShooter.cs" id="2_4ao3t"]
+[ext_resource type="PackedScene" uid="uid://dm48fscs2ruhw" path="res://src/weapons/projectiles/laser_beam.tscn" id="3_nli4r"]
+[ext_resource type="Texture2D" uid="uid://6pkxkwi6lifm" path="res://Assets/Export/Weapons/BigLaser.png" id="4_ekqf7"]
+
+[sub_resource type="Animation" id="Animation_h2gog"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -14)]
+}
+
+[sub_resource type="Animation" id="Animation_tlshr"]
+resource_name = "fire"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 3.03144, 0.297302),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(0.6, 0.4), Vector2(0.6, 0.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(2.92817, 2.92817, 0.297302),
+"update": 0,
+"values": [Vector2(0, -14), Vector2(0, -9), Vector2(0, -14)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e2ljd"]
+_data = {
+"RESET": SubResource("Animation_h2gog"),
+"fire": SubResource("Animation_tlshr")
+}
+
+[node name="SingleLaser" type="Node2D"]
+script = ExtResource("1_awxm5")
+UseAmmo = true
+MaxAmmo = 10
+ReloadTime = 0.5
+
+[node name="Laser" type="Node2D" parent="." node_paths=PackedStringArray("_rayCast", "Weapon", "_animationPlayer")]
+position = Vector2(0, -22)
+script = ExtResource("2_4ao3t")
+Damage = 10
+_beam = ExtResource("3_nli4r")
+_rayCast = NodePath("RayCast2D")
+Weapon = NodePath("..")
+_animationPlayer = NodePath("AnimationPlayer")
+
+[node name="RayCast2D" type="RayCast2D" parent="Laser"]
+position = Vector2(0, -15)
+target_position = Vector2(0, -800)
+collision_mask = 5
+collide_with_areas = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Laser"]
+libraries = {
+"": SubResource("AnimationLibrary_e2ljd")
+}
+
+[node name="Sprite" type="Sprite2D" parent="Laser"]
+z_index = -1
+position = Vector2(0, -14)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_ekqf7")

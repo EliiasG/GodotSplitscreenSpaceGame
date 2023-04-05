@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://7ngveoqd44sc"]
+
+[ext_resource type="Texture2D" uid="uid://ctpwl1357kgbv" path="res://Assets/Export/ValueBar/Bar.png" id="1_585hg"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/ValueBar.cs" id="1_lx8yl"]
+[ext_resource type="Texture2D" uid="uid://bhy2widp7cgkh" path="res://Assets/Export/ValueBar/Outline.png" id="1_svbmv"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/ValueBarBackGround.cs" id="3_pkmxs"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/ValueBarBar.cs" id="4_1kta0"]
+
+[node name="ValueBar" type="Control"]
+custom_minimum_size = Vector2(192, 32)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lx8yl")
+Value = 0.5
+
+[node name="BackGround" type="TextureRect" parent="." node_paths=PackedStringArray("ValueBar")]
+layout_mode = 0
+offset_top = -8.0
+offset_right = 192.0
+offset_bottom = 32.0
+texture = ExtResource("1_585hg")
+script = ExtResource("3_pkmxs")
+ValueBar = NodePath("..")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 192.0
+offset_bottom = 32.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Bar" type="TextureRect" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("ValueBar")]
+modulate = Color(0.960992, 0, 0.227397, 1)
+offset_left = -186.0
+offset_top = -3.5
+offset_right = 6.0
+offset_bottom = 28.5
+texture = ExtResource("1_585hg")
+script = ExtResource("4_1kta0")
+ValueBar = NodePath("../../..")
+
+[node name="Outline" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 33.0
+texture = ExtResource("1_svbmv")

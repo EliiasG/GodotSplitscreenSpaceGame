@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dibofp7nyn7w"]
+
+[ext_resource type="Script" path="res://src/scripts/resources/PlayerControls.cs" id="1_j40uf"]
+
+[resource]
+script = ExtResource("1_j40uf")
+Up = &"p1_mc_up"
+Down = &"p1_mc_down"
+Left = &"p1_mc_left"
+Right = &"p1_mc_right"
+Thrust = &"p1_mc_thrust"
+Shoot = &"p1_mc_shoot"

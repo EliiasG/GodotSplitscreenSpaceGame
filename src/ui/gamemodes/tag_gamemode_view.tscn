@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgw1ieg6p0llq"]
+
+[ext_resource type="PackedScene" uid="uid://cy7vubpeckqqt" path="res://src/ui/gamemodes/gamemode_view.tscn" id="1_rdykq"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/TagGameModeView.cs" id="2_7bdpx"]
+[ext_resource type="PackedScene" uid="uid://h00g7ycxhqno" path="res://src/ui/gamemodes/elements/reload_indicators.tscn" id="3_skirj"]
+[ext_resource type="PackedScene" uid="uid://c82avaft375r4" path="res://src/ui/gamemodes/elements/capture_indicators.tscn" id="4_uq4a2"]
+
+[node name="TagGameModeView" node_paths=PackedStringArray("CaptureIndicators") instance=ExtResource("1_rdykq")]
+script = ExtResource("2_7bdpx")
+CaptureIndicators = NodePath("CaptureIndicators")
+
+[node name="ReloadIndicators" parent="." index="1" instance=ExtResource("3_skirj")]
+layout_mode = 1
+
+[node name="CaptureIndicators" parent="." index="2" instance=ExtResource("4_uq4a2")]
+layout_mode = 1

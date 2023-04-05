@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ddbkpw4xmlavh"]
+
+[ext_resource type="Script" path="res://src/scripts/resources/LevelData.cs" id="1_vm6yn"]
+
+[resource]
+script = ExtResource("1_vm6yn")
+Width = 10000
+Height = 10000

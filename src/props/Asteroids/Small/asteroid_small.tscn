@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpmvplfld0ps3"]
+
+[ext_resource type="PackedScene" uid="uid://cumc2gshunau5" path="res://src/props/Asteroids/asteroid.tscn" id="1_7x1fy"]
+
+[node name="AsteroidSmall" instance=ExtResource("1_7x1fy")]
+
+[node name="Mapper" parent="." index="0"]
+MapSize = 0.1
+RotateView = false

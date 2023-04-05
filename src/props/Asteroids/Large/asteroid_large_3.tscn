@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv0a0r2jfxhyc"]
+
+[ext_resource type="PackedScene" uid="uid://diuxb4hby6afp" path="res://src/props/Asteroids/Large/asteroid_large.tscn" id="1_n56sf"]
+[ext_resource type="Texture2D" uid="uid://b583n8h5xppph" path="res://Assets/Export/Asteroids/AsteroidLarge3.png" id="2_2ik6r"]
+
+[node name="AsteroidLarge3" instance=ExtResource("1_n56sf")]
+
+[node name="AsteroidLarge3" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_2ik6r")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-34, -82, -19, -78, -1, -78, 24, -106, 57, -95, 76, -71, 96, -54, 97, -45, 91, -29, 90, 9, 94, 39, 81, 55, 75, 73, 51, 70, 40, 70, 27, 76, 0, 79, -20, 97, -42, 106, -47, 105, -72, 56, -84, 55, -97, 31, -91, 7, -91, -25, -79, -41, -73, -62, -49, -60)

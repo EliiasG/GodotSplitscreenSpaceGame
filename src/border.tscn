@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cta72c1nw1rmg"]
+
+[ext_resource type="Texture2D" uid="uid://cuekccjhmfu83" path="res://Assets/Export/Border.png" id="1_m56j5"]
+
+[node name="Border" type="Sprite2D"]
+modulate = Color(0, 0.0980392, 0.270588, 1)
+texture = ExtResource("1_m56j5")

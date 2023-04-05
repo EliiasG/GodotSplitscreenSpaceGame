@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkjtwvm45glry"]
+
+[ext_resource type="PackedScene" uid="uid://cpmvplfld0ps3" path="res://src/props/Asteroids/Small/asteroid_small.tscn" id="1_r3h5d"]
+[ext_resource type="Texture2D" uid="uid://bc6m6gs4bqprh" path="res://Assets/Export/Asteroids/AsteroidSmall1.png" id="2_obt46"]
+
+[node name="AsteroidSmall1" instance=ExtResource("1_r3h5d")]
+
+[node name="AsteroidSmall1" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_obt46")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-23, -27, -8, -26, 2, -32, 24, -22, 31, -24, 29, -11, 35, 4, 25, 11, 14, 31, -8, 24, -16, 27, -27, 14, -34, 14, -31, -13)

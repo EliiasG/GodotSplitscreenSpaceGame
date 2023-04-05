@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://byd323j6up5jl"]
+
+[ext_resource type="Texture2D" uid="uid://31sel2p33oyv" path="res://Assets/Export/BlueShip.png" id="1_cax5f"]
+[ext_resource type="Texture2D" uid="uid://dnx40jrhdlrji" path="res://Assets/Export/Markers/BlueMarker.png" id="1_txgc6"]
+[ext_resource type="Resource" uid="uid://djd0gq8mgh2o2" path="res://src/resources/controls/p2_controls_single_con.tres" id="1_u6gd4"]
+[ext_resource type="Script" path="res://src/scripts/resources/Player.cs" id="2_k01x2"]
+
+[resource]
+script = ExtResource("2_k01x2")
+Texture = ExtResource("1_cax5f")
+MapTexture = ExtResource("1_txgc6")
+ProjectileColor = Color(0, 0.666667, 0.921569, 1)
+Controls = ExtResource("1_u6gd4")

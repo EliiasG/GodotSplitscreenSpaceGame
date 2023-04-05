@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmsw2tsyc5i65"]
+
+[ext_resource type="Script" path="res://src/scripts/nodes/GameSessionRunner.cs" id="1_h5pnx"]
+
+[node name="GameSessionRunner" type="Node"]
+script = ExtResource("1_h5pnx")

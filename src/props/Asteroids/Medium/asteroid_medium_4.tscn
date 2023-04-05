@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3qm17m82lrt0"]
+
+[ext_resource type="PackedScene" uid="uid://qjryut5wmsen" path="res://src/props/Asteroids/Medium/asteroid_medium.tscn" id="1_02nce"]
+[ext_resource type="Texture2D" uid="uid://bvwg2b1rkh2co" path="res://Assets/Export/Asteroids/AsteroidMedium4.png" id="2_sej47"]
+
+[node name="AsteroidMedium4" instance=ExtResource("1_02nce")]
+
+[node name="AsteroidMedium4" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_sej47")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-29, -53, -27, -50, -8, -54, -4, -58, 11, -52, 35, -55, 40, -37, 54, -43, 56, -13, 49, 0, 56, 11, 47, 18, 47, 29, 27, 30, 28, 36, 21, 54, 4, 47, -8, 58, -28, 53, -31, 49, -43, 53, -42, 32, -48, 27, -47, 18, -56, 5, -51, -3, -54, -25, -38, -34, -38, -48)

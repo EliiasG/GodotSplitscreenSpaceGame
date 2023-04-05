@@ -1,0 +1,66 @@
+{
+  "Root": {
+    "Name": "Root",
+    "Position": {
+      "X": 0,
+      "Y": 0
+    },
+    "Geometry": {
+      "Points": [
+        {
+          "X": -2.75,
+          "Y": 3
+        },
+        {
+          "X": 3.5,
+          "Y": 3.25
+        },
+        {
+          "X": 2.5,
+          "Y": -2.625
+        },
+        {
+          "X": -3,
+          "Y": -3
+        }
+      ],
+      "Color": {
+        "R": 163,
+        "G": 167,
+        "B": 194,
+        "A": 255
+      }
+    },
+    "Modifiers": [
+      {
+        "Name": "Subdivide",
+        "Parameters": [
+          3
+        ]
+      },
+      {
+        "Name": "Randomize",
+        "Parameters": [
+          32,
+          {
+            "X": 0.25,
+            "Y": 0.5
+          }
+        ]
+      },
+      {
+        "Name": "Outline",
+        "Parameters": [
+          0.125,
+          {
+            "R": 26,
+            "G": 21,
+            "B": 22,
+            "A": 255
+          }
+        ]
+      }
+    ],
+    "Children": []
+  }
+}

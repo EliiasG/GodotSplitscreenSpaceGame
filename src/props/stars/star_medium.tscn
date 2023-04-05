@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://lp36x51kmjst"]
+
+[ext_resource type="Texture2D" uid="uid://gi4t8m3pc6uf" path="res://Assets/Export/Stars/StarMedium.png" id="1_p5fmw"]
+
+[node name="StarMedium" type="Sprite2D"]
+texture = ExtResource("1_p5fmw")

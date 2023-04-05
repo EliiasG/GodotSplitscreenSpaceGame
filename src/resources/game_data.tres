@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://erj2eufe5jsx"]
+
+[ext_resource type="Resource" uid="uid://ci0qjfskvikdi" path="res://src/resources/player1.tres" id="1_85v0x"]
+[ext_resource type="PackedScene" uid="uid://dtbo0lhnewt81" path="res://src/pickup.tscn" id="1_e1f2r"]
+[ext_resource type="Resource" uid="uid://7arj7ini0iwj" path="res://src/resources/player2.tres" id="2_mmkav"]
+[ext_resource type="Script" path="res://src/scripts/resources/GameData.cs" id="3_2u5bl"]
+[ext_resource type="PackedScene" uid="uid://cm3vwpdj6xrdv" path="res://src/player_ship.tscn" id="3_2wj27"]
+
+[resource]
+script = ExtResource("3_2u5bl")
+Player1 = ExtResource("1_85v0x")
+Player2 = ExtResource("2_mmkav")
+PlayerShip = ExtResource("3_2wj27")
+Pickup = ExtResource("1_e1f2r")

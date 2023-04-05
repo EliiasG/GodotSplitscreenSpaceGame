@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://x1f31n5u77pd"]
+
+[ext_resource type="Texture2D" uid="uid://cffomyl76v0q" path="res://Assets/Export/Stars/StarBig.png" id="1_hqlpw"]
+
+[node name="StarBig" type="Sprite2D"]
+position = Vector2(0, -1)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_hqlpw")

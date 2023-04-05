@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://c82avaft375r4"]
+
+[ext_resource type="PackedScene" path="res://src/ui/value_bar.tscn" id="1_4wul4"]
+[ext_resource type="Script" path="res://src/ui/gamemodes/elements/CaptureIndicators.cs" id="1_k7t5u"]
+
+[node name="CaptureIndicators" type="Control" node_paths=PackedStringArray("_player1bar", "_player2bar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k7t5u")
+_player1bar = NodePath("ValueBar1")
+_player2bar = NodePath("ValueBar2")
+
+[node name="ValueBar1" parent="." instance=ExtResource("1_4wul4")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.0
+offset_right = 157.0
+offset_bottom = 32.0
+grow_horizontal = 2
+scale = Vector2(-1.5, 1.5)
+BackgroundColor = Color(0.215686, 0.25098, 0.8, 1)
+BarColor = Color(0.368627, 0.454902, 0.952941, 1)
+
+[node name="ValueBar2" parent="." instance=ExtResource("1_4wul4")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 35.0
+offset_right = 227.0
+offset_bottom = 32.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+BackgroundColor = Color(0.215686, 0.25098, 0.8, 1)
+BarColor = Color(0.368627, 0.454902, 0.952941, 1)

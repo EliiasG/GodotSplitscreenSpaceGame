@@ -1,0 +1,97 @@
+{
+  "Root": {
+    "Name": "Root",
+    "Position": {
+      "X": 0,
+      "Y": 0
+    },
+    "Geometry": {
+      "Points": [],
+      "Color": {
+        "R": 255,
+        "G": 255,
+        "B": 255,
+        "A": 255
+      }
+    },
+    "Modifiers": [],
+    "Children": [
+      {
+        "Name": "Mirror",
+        "Position": {
+          "X": 0,
+          "Y": 0
+        },
+        "Geometry": {
+          "Points": [
+            {
+              "X": -0,
+              "Y": 1
+            }
+          ],
+          "Color": {
+            "R": 255,
+            "G": 255,
+            "B": 255,
+            "A": 255
+          }
+        },
+        "Modifiers": [],
+        "Children": []
+      },
+      {
+        "Name": "MainUi",
+        "Position": {
+          "X": 0,
+          "Y": 0
+        },
+        "Geometry": {
+          "Points": [
+            {
+              "X": -0,
+              "Y": 7
+            },
+            {
+              "X": -0.0625,
+              "Y": 7
+            },
+            {
+              "X": -0.0625,
+              "Y": -2
+            },
+            {
+              "X": -0,
+              "Y": -2
+            }
+          ],
+          "Color": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 255
+          }
+        },
+        "Modifiers": [
+          {
+            "Name": "Mirror",
+            "Parameters": [
+              {
+                "Path": "0"
+              }
+            ]
+          },
+          {
+            "Name": "Scale",
+            "Parameters": [
+              {
+                "X": 3.75,
+                "Y": 3.75
+              }
+            ]
+          }
+        ],
+        "Children": []
+      }
+    ]
+  }
+}

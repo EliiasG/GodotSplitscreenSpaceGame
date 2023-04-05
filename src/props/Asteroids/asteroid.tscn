@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://7qolrtjqlyux"]
+
+[ext_resource type="Script" path="res://src/scripts/nodes/Mappable.cs" id="1_ca3tq"]
+[ext_resource type="Resource" uid="uid://erj2eufe5jsx" path="res://src/resources/game_data.tres" id="2_ksxak"]
+[ext_resource type="Texture2D" uid="uid://ct8wb5oqrcy1o" path="res://Assets/Export/Markers/AsteroidMarker.png" id="3_ojsml"]
+
+[node name="Asteroid" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Mapper" type="Node2D" parent="."]
+script = ExtResource("1_ca3tq")
+GameData = ExtResource("2_ksxak")
+Texture = ExtResource("3_ojsml")
+MapSize = 0.15
+Layer = -1
+RotateView = true
