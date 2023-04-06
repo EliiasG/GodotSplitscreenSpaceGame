@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn4hhumtkidcv"]
+
+[ext_resource type="PackedScene" uid="uid://wswpayteocju" path="res://src/stars.tscn" id="1_bjwfh"]
+[ext_resource type="PackedScene" uid="uid://dayc8qhn84qep" path="res://src/ui/controls_selection.tscn" id="2_kn2nr"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/ScrollingStars.cs" id="2_pg346"]
+
+[node name="GameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stars" parent="." instance=ExtResource("1_bjwfh")]
+offset = Vector2(960, 540)
+transform = Transform2D(1, 0, 0, 1, 960, 540)
+scroll_ignore_camera_zoom = true
+script = ExtResource("2_pg346")
+Speed = Vector2(-125, 75)
+
+[node name="ControlsSelection" parent="." instance=ExtResource("2_kn2nr")]
+layout_mode = 1

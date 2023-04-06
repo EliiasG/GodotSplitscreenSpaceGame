@@ -60,6 +60,10 @@ public partial class TagGameMode : GameMode
     private void SetRunner(Player player)
     {
         Player other = Session.GameData.OtherPlayer(player);
+
+        other.Ship.ShowArrow = true;
+        player.Ship.ShowArrow = false;
+
         CaptureHandler.Holder = player;
         player.Ship.Weapon = null;
         other.Ship.Weapon ??= _weapon.Instantiate<Weapon>();
@@ -83,7 +87,7 @@ public partial class TagGameMode : GameMode
     }
 
     public override void ShipCollidedWithAsteroid(PlayerShip ship, Node2D asteroid)
-    { 
+    {
         ship.Velocity = Vector2.Zero;
     }
 }

@@ -1,11 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://cm3vwpdj6xrdv"]
+[gd_scene load_steps=29 format=3 uid="uid://cwf7ct2rnkqus"]
 
 [ext_resource type="Script" path="res://src/scripts/nodes/PlayerShip.cs" id="1_y2gp3"]
-[ext_resource type="Texture2D" uid="uid://bxd0fuu6rphlg" path="res://Assets/Export/Exhaust.png" id="3_g7gb5"]
+[ext_resource type="Texture2D" uid="uid://swqm2l8qmpr6" path="res://Assets/Export/Exhaust.png" id="3_g7gb5"]
 [ext_resource type="Script" path="res://src/scripts/nodes/FireParticles.cs" id="3_nollm"]
-[ext_resource type="Texture2D" uid="uid://d1nf7ktfnvtb4" path="res://Assets/Export/RedShip.png" id="4_rexss"]
+[ext_resource type="Texture2D" uid="uid://b2x5jxtvv4yti" path="res://Assets/Export/RedShip.png" id="4_rexss"]
 [ext_resource type="Script" path="res://src/scripts/nodes/Mappable.cs" id="5_h5wue"]
 [ext_resource type="Script" path="res://src/scripts/nodes/weapons/WeaponCollider.cs" id="6_gn5t3"]
+[ext_resource type="Script" path="res://src/scripts/nodes/PlayerArrow.cs" id="7_5awat"]
+[ext_resource type="Texture2D" uid="uid://bqgb8eu8qdw4h" path="res://Assets/Export/PlayerArrow.png" id="7_5y6kv"]
 
 [sub_resource type="Curve" id="Curve_7m6as"]
 _data = [Vector2(0, 0.136364), 0.0, 2.3004, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -190,6 +192,23 @@ tracks/3/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_x8rek"]
+resource_name = "hit"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.3, 0.3), Vector2(0.5, 0.5)]
+}
+
 [sub_resource type="Animation" id="Animation_g4w3n"]
 resource_name = "spawn"
 length = 1.25
@@ -236,23 +255,6 @@ tracks/2/keys = {
 "values": [Vector2(1e-05, 1e-05), Vector2(0.5, 0.5), Vector2(0.75, 0.75), Vector2(0.5, 0.5)]
 }
 
-[sub_resource type="Animation" id="Animation_x8rek"]
-resource_name = "hit"
-length = 0.25
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.5, 0.5), Vector2(0.3, 0.3), Vector2(0.5, 0.5)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mbr31"]
 _data = {
 "RESET": SubResource("Animation_o2ynl"),
@@ -266,8 +268,8 @@ _data = {
 radius = 17.0294
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_857kh"]
-radius = 19.0
-height = 60.0
+radius = 22.0
+height = 66.0
 
 [node name="PlayerShip" type="CharacterBody2D"]
 collision_layer = 2
@@ -328,3 +330,15 @@ Ship = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponCollider"]
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_857kh")
+
+[node name="PlayerArrow" type="Node2D" parent="." node_paths=PackedStringArray("_ship")]
+visibility_layer = 0
+script = ExtResource("7_5awat")
+_ship = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerArrow"]
+modulate = Color(1, 1, 1, 0.784314)
+visibility_layer = 6
+position = Vector2(183, 0)
+rotation = 1.57079
+texture = ExtResource("7_5y6kv")

@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://uyjoimprafpy"]
+[gd_scene load_steps=3 format=3 uid="uid://uyjoimprafpy"]
 
-[ext_resource type="PackedScene" uid="uid://dmsw2tsyc5i65" path="res://src/game_session_runner.tscn" id="1_ew814"]
 [ext_resource type="Script" path="res://src/scripts/nodes/Root.cs" id="1_ixgus"]
-[ext_resource type="Resource" uid="uid://dblgnskour3hv" path="res://src/resources/test_session/test_session.tres" id="2_bmbvt"]
+[ext_resource type="PackedScene" uid="uid://cn4hhumtkidcv" path="res://src/ui/game_menu.tscn" id="2_fbkhm"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_ixgus")
 
-[node name="GameSessionRunner" parent="." instance=ExtResource("1_ew814")]
-SessionDescription = ExtResource("2_bmbvt")
+[node name="GameMenu" parent="." instance=ExtResource("2_fbkhm")]

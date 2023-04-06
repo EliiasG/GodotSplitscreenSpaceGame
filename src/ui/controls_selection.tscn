@@ -1,0 +1,146 @@
+[gd_scene load_steps=8 format=3 uid="uid://dayc8qhn84qep"]
+
+[ext_resource type="Theme" uid="uid://dqytxw23kictt" path="res://src/resources/godot/theme.tres" id="1_cvugr"]
+[ext_resource type="PackedScene" uid="uid://dwesq3ffqal7x" path="res://src/ui/controls_button.tscn" id="1_r4t4g"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/ControlsSelection.cs" id="1_tjsic"]
+[ext_resource type="Texture2D" uid="uid://c0ff4n1lgpjok" path="res://Assets/Export/ControllerRed.png" id="3_d5fnf"]
+[ext_resource type="Texture2D" uid="uid://b8nyr6jkmv1tk" path="res://Assets/Export/ControllerBlue.png" id="4_jgcmh"]
+[ext_resource type="Texture2D" uid="uid://b81qoxcftedve" path="res://Assets/Export/ControllerBothBig.png" id="6_nycqh"]
+[ext_resource type="Texture2D" uid="uid://re0sj57hqd3s" path="res://Assets/Export/ButtonIcons/AButtonBig.png" id="7_vc8td"]
+
+[node name="ControlsSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cvugr")
+script = ExtResource("1_tjsic")
+
+[node name="MainScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainScreen"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 61.0
+grow_horizontal = 2
+text = "At least one controller is required to play"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MainScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainScreen/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TwoControllers" parent="MainScreen/CenterContainer/HBoxContainer" instance=ExtResource("1_r4t4g")]
+layout_mode = 2
+focus_neighbor_right = NodePath("../ControlsButton2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainScreen/CenterContainer/HBoxContainer/TwoControllers"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MainScreen/CenterContainer/HBoxContainer/TwoControllers/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainScreen/CenterContainer/HBoxContainer/TwoControllers/VBoxContainer/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MainScreen/CenterContainer/HBoxContainer/TwoControllers/VBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+texture = ExtResource("3_d5fnf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Control" type="Control" parent="MainScreen/CenterContainer/HBoxContainer/TwoControllers/VBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MainScreen/CenterContainer/HBoxContainer/TwoControllers/VBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+texture = ExtResource("4_jgcmh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MainScreen/CenterContainer/HBoxContainer/TwoControllers/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Two controllers"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MainScreen/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="ControlsButton2" parent="MainScreen/CenterContainer/HBoxContainer" instance=ExtResource("1_r4t4g")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../TwoControllers")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainScreen/CenterContainer/HBoxContainer/ControlsButton2"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MainScreen/CenterContainer/HBoxContainer/ControlsButton2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MainScreen/CenterContainer/HBoxContainer/ControlsButton2/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(300, 250)
+layout_mode = 2
+texture = ExtResource("6_nycqh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MainScreen/CenterContainer/HBoxContainer/ControlsButton2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "One controller"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainScreen"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -138.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Label2" type="Label" parent="MainScreen/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = " Press "
+
+[node name="TextureRect" type="TextureRect" parent="MainScreen/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("7_vc8td")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainScreen/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = " To Continue"
+
+[connection signal="ready" from="MainScreen/CenterContainer/HBoxContainer/TwoControllers" to="MainScreen/CenterContainer/HBoxContainer/TwoControllers" method="grab_focus"]

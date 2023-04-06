@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dymjipoeb50bh"
-path="res://.godot/imported/SingleController.png-855c27021a76c8e13dc1f5dba77d33e5.ctex"
+uid="uid://bqgb8eu8qdw4h"
+path="res://.godot/imported/PlayerArrow.png-cc2218563c1c2536fed41e8af1f41e8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Export/SingleController.png"
-dest_files=["res://.godot/imported/SingleController.png-855c27021a76c8e13dc1f5dba77d33e5.ctex"]
+source_file="res://Assets/Export/PlayerArrow.png"
+dest_files=["res://.godot/imported/PlayerArrow.png-cc2218563c1c2536fed41e8af1f41e8c.ctex"]
 
 [params]
 

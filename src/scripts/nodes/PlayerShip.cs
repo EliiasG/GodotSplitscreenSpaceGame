@@ -65,7 +65,7 @@ public partial class PlayerShip : CharacterBody2D
 	public Curve FuelYieldCurve { get; private set; }
 
 	[Export]
-	public float AimAssistAngleDegrees { get; private set; } = 20f;
+	public float AimAssistAngleDegrees { get; private set; } = 12.5f;
 
 	[Export]
 	public float AimAssistDistance { get; private set; } = 1000f;
@@ -73,6 +73,8 @@ public partial class PlayerShip : CharacterBody2D
 	public float Fuel { get; set; } = 1;
 
 	public bool CanMove { get; set; } = false;
+
+	public bool ShowArrow { get; set; } = false;
 
 	public float ThrustYield => FuelYieldCurve.Sample(Fuel);
 
@@ -224,8 +226,6 @@ public partial class PlayerShip : CharacterBody2D
 		if (GlobalPosition.DistanceSquaredTo(other.GlobalPosition) > AimAssistDistance * AimAssistDistance) return stickDir;
 
 		Vector2 shipDiff = (other.GlobalPosition - GlobalPosition);
-
-		GD.Print(shipDiff.Length());
 
 		float shipAngle = shipDiff.Angle();
 
