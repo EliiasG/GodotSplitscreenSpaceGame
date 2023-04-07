@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj15qanj7is1u"]
+
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/ControlsLine.cs" id="1_qkupf"]
+[ext_resource type="PackedScene" uid="uid://cxjpmfav43p65" path="res://src/ui/controls_line_point.tscn" id="2_3hvwq"]
+
+[node name="ControlsLine" type="Line2D" node_paths=PackedStringArray("_outline")]
+self_modulate = Color(1, 1, 1, 0.784314)
+width = 3.0
+joint_mode = 1
+script = ExtResource("1_qkupf")
+_pointScene = ExtResource("2_3hvwq")
+_outline = NodePath("Outline")
+
+[node name="Outline" type="Line2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.784314)
+show_behind_parent = true
+width = 12.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 1

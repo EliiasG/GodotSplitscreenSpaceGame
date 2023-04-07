@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxjpmfav43p65"]
+
+[ext_resource type="Texture2D" uid="uid://cxc5yn4ktqkog" path="res://Assets/Export/Point.png" id="1_sp67p"]
+
+[node name="ControlsLinePoint" type="Node2D"]
+
+[node name="Point" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_sp67p")

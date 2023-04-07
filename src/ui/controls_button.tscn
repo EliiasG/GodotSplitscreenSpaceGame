@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dwesq3ffqal7x"]
 
-[ext_resource type="Texture2D" uid="uid://j7a1s52mldrd" path="res://Assets/Export/ControlsButtonBig.png" id="1_ehow1"]
+[ext_resource type="Texture2D" uid="uid://c3sxclywtuuai" path="res://Assets/Export/ControlsButtonBig.png" id="1_ehow1"]
 [ext_resource type="Script" path="res://src/scripts/nodes/ui/ControlsButton.cs" id="1_q5a3h"]
 
 [sub_resource type="Animation" id="Animation_4vvyc"]
@@ -75,22 +75,20 @@ _data = {
 "select": SubResource("Animation_svun2")
 }
 
-[node name="ControlsButton" type="CenterContainer" node_paths=PackedStringArray("_animationPlayer", "_button")]
+[node name="ControlsButton" type="CenterContainer" node_paths=PackedStringArray("_animationPlayer")]
 offset_right = 550.0
 offset_bottom = 550.0
 scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(275, 275)
-focus_mode = 2
 mouse_filter = 2
 script = ExtResource("1_q5a3h")
 _animationPlayer = NodePath("AnimationPlayer")
-_button = NodePath("Control/TextureButton")
 
 [node name="Control" type="Control" parent="."]
 custom_minimum_size = Vector2(550, 550)
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="Control"]
+[node name="TextureButton" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -104,9 +102,7 @@ offset_bottom = 269.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(272, 272)
-button_mask = 0
-texture_normal = ExtResource("1_ehow1")
-stretch_mode = 0
+texture = ExtResource("1_ehow1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

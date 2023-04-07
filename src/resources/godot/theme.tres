@@ -12,5 +12,5 @@ spacing_glyph = 1
 default_font = SubResource("FontVariation_g8jnx")
 default_font_size = 50
 Label/colors/font_color = Color(1, 1, 1, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0.101961, 0.0823529, 0.0862745, 1)
 Label/constants/outline_size = 25
