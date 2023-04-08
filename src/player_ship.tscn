@@ -1,13 +1,13 @@
 [gd_scene load_steps=29 format=3 uid="uid://cwf7ct2rnkqus"]
 
 [ext_resource type="Script" path="res://src/scripts/nodes/PlayerShip.cs" id="1_y2gp3"]
-[ext_resource type="Texture2D" uid="uid://d0lxutvxx4516" path="res://Assets/Export/Exhaust.png" id="3_g7gb5"]
+[ext_resource type="Texture2D" uid="uid://dlviiibvd5rvr" path="res://Assets/Export/Exhaust.png" id="3_g7gb5"]
 [ext_resource type="Script" path="res://src/scripts/nodes/FireParticles.cs" id="3_nollm"]
-[ext_resource type="Texture2D" uid="uid://bnhrksd4jlody" path="res://Assets/Export/RedShip.png" id="4_rexss"]
+[ext_resource type="Texture2D" uid="uid://cacm3vdauqkuu" path="res://Assets/Export/RedShip.png" id="4_rexss"]
 [ext_resource type="Script" path="res://src/scripts/nodes/Mappable.cs" id="5_h5wue"]
 [ext_resource type="Script" path="res://src/scripts/nodes/weapons/WeaponCollider.cs" id="6_gn5t3"]
 [ext_resource type="Script" path="res://src/scripts/nodes/PlayerArrow.cs" id="7_5awat"]
-[ext_resource type="Texture2D" uid="uid://i3llbhducsu1" path="res://Assets/Export/PlayerArrow.png" id="7_5y6kv"]
+[ext_resource type="Texture2D" uid="uid://xsud7iuon2t" path="res://Assets/Export/PlayerArrow.png" id="7_5y6kv"]
 
 [sub_resource type="Curve" id="Curve_7m6as"]
 _data = [Vector2(0, 0.136364), 0.0, 2.3004, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]

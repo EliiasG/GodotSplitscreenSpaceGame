@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bwoqhwnfewhtx"]
+
+[ext_resource type="PackedScene" uid="uid://bgw1ieg6p0llq" path="res://src/ui/gamemodes/tag_gamemode_view.tscn" id="1_ihmqc"]
+[ext_resource type="Texture2D" uid="uid://i0u2xqg0o4ej" path="res://Assets/Export/Pickups/RunnerPickup.png" id="2_j8s6j"]
+[ext_resource type="PackedScene" uid="uid://j5735l7soc84" path="res://src/weapons/tag_laser.tscn" id="3_bv0na"]
+[ext_resource type="Script" path="res://src/scripts/resources/gamemodes/TagGameMode.cs" id="4_dfly6"]
+
+[resource]
+script = ExtResource("4_dfly6")
+WinTime = 0.0
+ChaserAcceleration = 1000.0
+ChaserMaxSpeed = 1000.0
+_pickupTexture = ExtResource("2_j8s6j")
+_weapon = ExtResource("3_bv0na")
+_gameModeView = ExtResource("1_ihmqc")

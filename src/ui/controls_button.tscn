@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dwesq3ffqal7x"]
 
-[ext_resource type="Texture2D" uid="uid://c3sxclywtuuai" path="res://Assets/Export/ControlsButtonBig.png" id="1_ehow1"]
+[ext_resource type="Texture2D" uid="uid://ik353l8a7ob4" path="res://Assets/Export/ControlsButtonBig.png" id="1_ehow1"]
 [ext_resource type="Script" path="res://src/scripts/nodes/ui/ControlsButton.cs" id="1_q5a3h"]
 
 [sub_resource type="Animation" id="Animation_4vvyc"]

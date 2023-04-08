@@ -2,8 +2,10 @@ using Godot;
 using System.Collections.Generic;
 using System.Linq;
 
-public partial class PropertyOptions<T>
+public class PropertyOptions<T> : IPropertyOptions
 {
+    public string Name { get; }
+
     public string SelectedName => _options[_selectedIndex].Item1;
 
     public T SelectedValue => _options[_selectedIndex].Item2;
@@ -12,9 +14,11 @@ public partial class PropertyOptions<T>
 
     private readonly (string, T)[] _options;
 
-    public PropertyOptions(IEnumerable<(string, T)> options)
+    public PropertyOptions(string name, IEnumerable<(string, T)> options)
     {
         _options = options.ToArray();
+        Name = name;
+
     }
 
     public void SelectNext()

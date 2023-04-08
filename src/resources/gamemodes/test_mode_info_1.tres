@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dux4uxrg0ciqc"]
+
+[ext_resource type="Resource" uid="uid://bwoqhwnfewhtx" path="res://src/resources/gamemodes/tag_mode.tres" id="1_66kio"]
+[ext_resource type="Script" path="res://src/scripts/resources/gamemodes/TagGameModeInfo.cs" id="2_7mlqx"]
+
+[resource]
+script = ExtResource("2_7mlqx")
+_name = "Tagging"
+_description = "Cooling!"
+GameMode = ExtResource("1_66kio")

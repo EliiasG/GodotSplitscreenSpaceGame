@@ -9,5 +9,7 @@ public abstract partial class GameModeInfo : Resource
 
     public abstract string Description { get; }
 
+    public abstract IPropertyOptions[] PropertyOptions { get; }
 
+    public abstract void Apply();
 }
