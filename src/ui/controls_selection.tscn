@@ -4,15 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://dwesq3ffqal7x" path="res://src/ui/controls_button.tscn" id="1_r4t4g"]
 [ext_resource type="Script" path="res://src/scripts/nodes/ui/ControlsSelection.cs" id="1_tjsic"]
 [ext_resource type="PackedScene" uid="uid://jvvhqmt1s6kq" path="res://src/ui/main_menu.tscn" id="3_0yq4n"]
-[ext_resource type="Texture2D" uid="uid://cnodojygdb2d5" path="res://Assets/Export/ControllerRed.png" id="3_d5fnf"]
-[ext_resource type="Texture2D" uid="uid://dw6nc60rh72k5" path="res://Assets/Export/ControllerBlue.png" id="4_jgcmh"]
+[ext_resource type="Texture2D" uid="uid://c0tc03hk0iucm" path="res://Assets/Export/ControllerRed.png" id="3_d5fnf"]
+[ext_resource type="Texture2D" uid="uid://nvf8r42uc104" path="res://Assets/Export/ControllerBlue.png" id="4_jgcmh"]
 [ext_resource type="Resource" uid="uid://erj2eufe5jsx" path="res://src/resources/game_data.tres" id="4_lccn3"]
 [ext_resource type="Resource" uid="uid://dibofp7nyn7w" path="res://src/resources/controls/p1_controls_multi_con.tres" id="5_t81if"]
 [ext_resource type="Resource" uid="uid://c054fb0fgma34" path="res://src/resources/controls/p2_controls_multi_con.tres" id="6_7f1y2"]
-[ext_resource type="Texture2D" uid="uid://0jbkxtsamtpo" path="res://Assets/Export/ControllerBothBig.png" id="6_nycqh"]
-[ext_resource type="Texture2D" uid="uid://dopcncxnc4rqe" path="res://Assets/Export/ButtonIcons/AButtonBig.png" id="7_vc8td"]
-[ext_resource type="Texture2D" uid="uid://0wu5xrfgixlu" path="res://Assets/Export/ControllerXYABBig.png" id="8_jnimm"]
-[ext_resource type="Texture2D" uid="uid://ck3itwxwwkm82" path="res://Assets/Export/ButtonIcons/BButtonBig.png" id="9_0ee5t"]
+[ext_resource type="Texture2D" uid="uid://bwavr41wpt047" path="res://Assets/Export/ControllerBothBig.png" id="6_nycqh"]
+[ext_resource type="Texture2D" uid="uid://8no2qp30fvwj" path="res://Assets/Export/ButtonIcons/AButtonBig.png" id="7_vc8td"]
+[ext_resource type="Texture2D" uid="uid://wtm3q13y06jk" path="res://Assets/Export/ControllerXYABBig.png" id="8_jnimm"]
+[ext_resource type="Texture2D" uid="uid://nlpi0vpen50d" path="res://Assets/Export/ButtonIcons/BButtonBig.png" id="9_0ee5t"]
 [ext_resource type="Resource" uid="uid://cq520frdostxk" path="res://src/resources/controls/p1_controls_single_con.tres" id="9_0x1qv"]
 [ext_resource type="Resource" uid="uid://djd0gq8mgh2o2" path="res://src/resources/controls/p2_controls_single_con.tres" id="10_6ypl5"]
 [ext_resource type="PackedScene" uid="uid://bj15qanj7is1u" path="res://src/ui/controls_line.tscn" id="10_lotqa"]
@@ -56,6 +56,37 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_t502k"]
+resource_name = "done"
+length = 0.15
+step = 0.05
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Finished"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_0nbu4"]
 resource_name = "disappear"
 length = 0.25
@@ -68,7 +99,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(2.07053, 1),
+"transitions": PackedFloat32Array(2, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-1920, 0)]
 }
@@ -85,40 +116,9 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(2, 1),
 "update": 0,
 "values": [Vector2(-1920, 0), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_t502k"]
-resource_name = "done"
-length = 0.25
-step = 0.05
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.25),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"Finished"
-}]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_dgrcj"]
@@ -166,6 +166,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 3840.0
+offset_bottom = 2160.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(960, 1080)
