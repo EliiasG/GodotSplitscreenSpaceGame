@@ -1,0 +1,345 @@
+[gd_scene load_steps=10 format=3 uid="uid://5cdbjqyift06"]
+
+[ext_resource type="Texture2D" uid="uid://b0200ityy6322" path="res://Assets/Export/SmallSelectionArrowBig.png" id="1_pyi6w"]
+[ext_resource type="Theme" uid="uid://dqytxw23kictt" path="res://src/resources/godot/theme.tres" id="1_vduet"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/PlayMenuSetting.cs" id="2_v1q3f"]
+
+[sub_resource type="Animation" id="Animation_b552o"]
+resource_name = "select"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Setting/Arrow:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(50, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Value/ValueLabel:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.592157, 0.592157, 0.592157, 1), Color(0.34902, 1, 0.54902, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Value/ValueLabel:theme_override_font_sizes/font_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [30, 40]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Value/RightArrow:custom_minimum_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 55), Vector2(50, 55)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Value/LeftArrow:custom_minimum_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 55), Vector2(50, 55)]
+}
+
+[sub_resource type="Animation" id="Animation_mf5nb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Setting/Arrow:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Value/ValueLabel:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.592157, 0.592157, 0.592157, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Value/ValueLabel:theme_override_font_sizes/font_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [30]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Value/RightArrow:custom_minimum_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 55)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Value/LeftArrow:custom_minimum_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 55)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Value/Control:custom_minimum_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(75, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_144iw"]
+resource_name = "deselect"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Setting/Arrow:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(50, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Value/ValueLabel:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.34902, 1, 0.54902, 1), Color(0.592157, 0.592157, 0.592157, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Value/ValueLabel:theme_override_font_sizes/font_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [40, 30]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Value/RightArrow:custom_minimum_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50, 55), Vector2(0, 55)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Value/LeftArrow:custom_minimum_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50, 55), Vector2(0, 55)]
+}
+
+[sub_resource type="Animation" id="Animation_lgjto"]
+resource_name = "next"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Value/LeftArrow:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(50, 55), Vector2(30, 55), Vector2(50, 55)]
+}
+
+[sub_resource type="Animation" id="Animation_txqi6"]
+resource_name = "next"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Value/RightArrow:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(50, 55), Vector2(0, 55), Vector2(50, 55)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Value/Control:custom_minimum_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(75, 0), Vector2(125, 0), Vector2(75, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oy57c"]
+_data = {
+"RESET": SubResource("Animation_mf5nb"),
+"deselect": SubResource("Animation_144iw"),
+"next": SubResource("Animation_txqi6"),
+"previous": SubResource("Animation_lgjto"),
+"select": SubResource("Animation_b552o")
+}
+
+[node name="PlayMenuSetting" type="Control" node_paths=PackedStringArray("_animationPlayer")]
+custom_minimum_size = Vector2(1920, 75)
+layout_mode = 3
+anchors_preset = 0
+focus_mode = 2
+theme = ExtResource("1_vduet")
+script = ExtResource("2_v1q3f")
+_animationPlayer = NodePath("AnimationPlayer")
+
+[node name="Setting" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 420.0
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Setting"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="Arrow" type="TextureRect" parent="Setting"]
+modulate = Color(0.901961, 0.470588, 0.223529, 1)
+layout_mode = 2
+texture = ExtResource("1_pyi6w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SettingLabel" type="Label" parent="Setting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Setting"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -204.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+
+[node name="LeftArrow" type="TextureRect" parent="Value"]
+modulate = Color(0, 0.682353, 0.392157, 1)
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+texture = ExtResource("1_pyi6w")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="ValueLabel" type="Label" parent="Value"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_font_sizes/font_size = 30
+text = "value"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightArrow" type="TextureRect" parent="Value"]
+modulate = Color(0, 0.682353, 0.392157, 1)
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+texture = ExtResource("1_pyi6w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="Value"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oy57c")
+}

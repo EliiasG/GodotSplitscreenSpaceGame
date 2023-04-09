@@ -1,19 +1,20 @@
-[gd_scene load_steps=16 format=3 uid="uid://clusilnduc7sq"]
+[gd_scene load_steps=17 format=3 uid="uid://clusilnduc7sq"]
 
 [ext_resource type="Theme" uid="uid://dqytxw23kictt" path="res://src/resources/godot/theme.tres" id="1_l2jx2"]
 [ext_resource type="Script" path="res://src/scripts/nodes/ui/PlayMenu.cs" id="1_xlddj"]
 [ext_resource type="Resource" uid="uid://bmnnwahjwsfk8" path="res://src/resources/gamemodes/tag_mode_info.tres" id="2_px06q"]
-[ext_resource type="Texture2D" uid="uid://3tl4j84apb6t" path="res://Assets/Export/SelectionArrowBig.png" id="4_4jk2y"]
+[ext_resource type="Texture2D" uid="uid://p4fnqc4h8q3l" path="res://Assets/Export/SelectionArrowBig.png" id="4_4jk2y"]
 [ext_resource type="PackedScene" uid="uid://jvvhqmt1s6kq" path="res://src/ui/main_menu.tscn" id="6_beuah"]
-[ext_resource type="Texture2D" uid="uid://8no2qp30fvwj" path="res://Assets/Export/ButtonIcons/AButtonBig.png" id="7_sgah4"]
-[ext_resource type="Texture2D" uid="uid://nlpi0vpen50d" path="res://Assets/Export/ButtonIcons/BButtonBig.png" id="8_tqu6q"]
+[ext_resource type="PackedScene" uid="uid://5cdbjqyift06" path="res://src/ui/play_menu_setting.tscn" id="6_yfx3v"]
+[ext_resource type="Texture2D" uid="uid://cgo5cl7yvts7c" path="res://Assets/Export/ButtonIcons/AButtonBig.png" id="7_sgah4"]
+[ext_resource type="Texture2D" uid="uid://m0cbr5bwcime" path="res://Assets/Export/ButtonIcons/BButtonBig.png" id="8_tqu6q"]
 
 [sub_resource type="Animation" id="Animation_7tpo3"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/ModeSelect/ModeBox/TextureRect2:custom_minimum_size")
+tracks/0/path = NodePath("VBoxContainer/ModeSelect/ModeBox/LeftArrow:custom_minimum_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +26,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer/ModeSelect/ModeBox/TextureRect:custom_minimum_size")
+tracks/1/path = NodePath("VBoxContainer/ModeSelect/ModeBox/RightArrow:custom_minimum_size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -107,21 +108,21 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_8p2w0"]
-resource_name = "left"
+[sub_resource type="Animation" id="Animation_crhge"]
+resource_name = "right"
 length = 0.25
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/ModeSelect/ModeBox/TextureRect2:custom_minimum_size")
+tracks/0/path = NodePath("VBoxContainer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.25),
-"transitions": PackedFloat32Array(1.5, 1, 1),
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(2, 1),
 "update": 0,
-"values": [Vector2(150, 0), Vector2(75, 0), Vector2(150, 0)]
+"values": [Vector2(0, -1080), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_d6b60"]
@@ -131,7 +132,24 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/ModeSelect/ModeBox/TextureRect:custom_minimum_size")
+tracks/0/path = NodePath("VBoxContainer/ModeSelect/ModeBox/RightArrow:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.25),
+"transitions": PackedFloat32Array(1.5, 1, 1),
+"update": 0,
+"values": [Vector2(150, 0), Vector2(75, 0), Vector2(150, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8p2w0"]
+resource_name = "left"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/ModeSelect/ModeBox/LeftArrow:custom_minimum_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -158,23 +176,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -1080)]
 }
 
-[sub_resource type="Animation" id="Animation_crhge"]
-resource_name = "right"
-length = 0.25
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(2, 1),
-"update": 0,
-"values": [Vector2(0, -1080), Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wg0xv"]
 _data = {
 "RESET": SubResource("Animation_7tpo3"),
@@ -198,7 +199,7 @@ theme = ExtResource("1_l2jx2")
 script = ExtResource("1_xlddj")
 GameModes = Array[Resource]([ExtResource("2_px06q")])
 _modeLabel = NodePath("VBoxContainer/ModeSelect/ModeBox/ModeLabel")
-_configurationModeLabel = NodePath("VBoxContainer/VBoxContainer/Label")
+_configurationModeLabel = NodePath("VBoxContainer/ModeConfiguration/ModeLabel")
 _descriptionLabel = NodePath("VBoxContainer/ModeSelect/DescriptionLabel")
 _animationPlayer = NodePath("AnimationPlayer")
 _mainMenu = ExtResource("6_beuah")
@@ -223,7 +224,7 @@ custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/ModeSelect/ModeBox"]
+[node name="LeftArrow" type="TextureRect" parent="VBoxContainer/ModeSelect/ModeBox"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 texture = ExtResource("4_4jk2y")
@@ -248,7 +249,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ModeSelect/ModeBox"]
+[node name="RightArrow" type="TextureRect" parent="VBoxContainer/ModeSelect/ModeBox"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 texture = ExtResource("4_4jk2y")
@@ -266,20 +267,34 @@ text = "Description"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+[node name="ModeConfiguration" type="VBoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+[node name="ModeLabel" type="Label" parent="VBoxContainer/ModeConfiguration"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.470588, 0.223529, 1)
 theme_override_constants/outline_size = 50
 theme_override_font_sizes/font_size = 75
 text = "Mode"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer/ModeConfiguration"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Settings" type="VBoxContainer" parent="VBoxContainer/ModeConfiguration"]
+layout_mode = 2
+
+[node name="PlayMenuSetting" parent="VBoxContainer/ModeConfiguration/Settings" instance=ExtResource("6_yfx3v")]
+layout_mode = 2
+
+[node name="PlayMenuSetting2" parent="VBoxContainer/ModeConfiguration/Settings" instance=ExtResource("6_yfx3v")]
+layout_mode = 2
+
+[node name="PlayMenuSetting3" parent="VBoxContainer/ModeConfiguration/Settings" instance=ExtResource("6_yfx3v")]
 layout_mode = 2
 
 [node name="MenuControls" type="HBoxContainer" parent="."]
@@ -329,3 +344,5 @@ vertical_alignment = 1
 [node name="Control2" type="Control" parent="MenuControls"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
+
+[connection signal="ready" from="VBoxContainer/ModeConfiguration/Settings/PlayMenuSetting" to="VBoxContainer/ModeConfiguration/Settings/PlayMenuSetting" method="grab_focus"]
