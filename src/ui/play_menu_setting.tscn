@@ -4,71 +4,6 @@
 [ext_resource type="Theme" uid="uid://dqytxw23kictt" path="res://src/resources/godot/theme.tres" id="1_vduet"]
 [ext_resource type="Script" path="res://src/scripts/nodes/ui/PlayMenuSetting.cs" id="2_v1q3f"]
 
-[sub_resource type="Animation" id="Animation_b552o"]
-resource_name = "select"
-length = 0.15
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Setting/Arrow:custom_minimum_size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(2, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(50, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Value/ValueLabel:theme_override_colors/font_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.592157, 0.592157, 0.592157, 1), Color(0.34902, 1, 0.54902, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Value/ValueLabel:theme_override_font_sizes/font_size")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(0.25, 1),
-"update": 0,
-"values": [30, 40]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Value/RightArrow:custom_minimum_size")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 55), Vector2(50, 55)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Value/LeftArrow:custom_minimum_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 55), Vector2(50, 55)]
-}
-
 [sub_resource type="Animation" id="Animation_mf5nb"]
 length = 0.001
 tracks/0/type = "value"
@@ -209,23 +144,6 @@ tracks/4/keys = {
 "values": [Vector2(50, 55), Vector2(0, 55)]
 }
 
-[sub_resource type="Animation" id="Animation_lgjto"]
-resource_name = "next"
-length = 0.15
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Value/LeftArrow:custom_minimum_size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(50, 55), Vector2(30, 55), Vector2(50, 55)]
-}
-
 [sub_resource type="Animation" id="Animation_txqi6"]
 resource_name = "next"
 length = 0.15
@@ -255,6 +173,88 @@ tracks/1/keys = {
 "values": [Vector2(75, 0), Vector2(125, 0), Vector2(75, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_lgjto"]
+resource_name = "next"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Value/LeftArrow:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(50, 55), Vector2(30, 55), Vector2(50, 55)]
+}
+
+[sub_resource type="Animation" id="Animation_b552o"]
+resource_name = "select"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Setting/Arrow:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(50, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Value/ValueLabel:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.592157, 0.592157, 0.592157, 1), Color(0.34902, 1, 0.54902, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Value/ValueLabel:theme_override_font_sizes/font_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [30, 40]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Value/RightArrow:custom_minimum_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 55), Vector2(50, 55)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Value/LeftArrow:custom_minimum_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 55), Vector2(50, 55)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oy57c"]
 _data = {
 "RESET": SubResource("Animation_mf5nb"),
@@ -264,7 +264,7 @@ _data = {
 "select": SubResource("Animation_b552o")
 }
 
-[node name="PlayMenuSetting" type="Control" node_paths=PackedStringArray("_animationPlayer")]
+[node name="PlayMenuSetting" type="Control" node_paths=PackedStringArray("_animationPlayer", "_setting", "_value")]
 custom_minimum_size = Vector2(1920, 75)
 layout_mode = 3
 anchors_preset = 0
@@ -272,6 +272,8 @@ focus_mode = 2
 theme = ExtResource("1_vduet")
 script = ExtResource("2_v1q3f")
 _animationPlayer = NodePath("AnimationPlayer")
+_setting = NodePath("Setting/SettingLabel")
+_value = NodePath("Value/ValueLabel")
 
 [node name="Setting" type="HBoxContainer" parent="."]
 layout_mode = 1

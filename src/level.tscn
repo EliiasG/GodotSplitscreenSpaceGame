@@ -1,0 +1,79 @@
+[gd_scene load_steps=22 format=3 uid="uid://cqkm2e14f3qf4"]
+
+[ext_resource type="Script" path="res://src/scripts/nodes/LevelScene.cs" id="1_tvkp4"]
+[ext_resource type="PackedScene" path="res://src/node_spawner.tscn" id="2_vqalc"]
+[ext_resource type="PackedScene" uid="uid://dkjtwvm45glry" path="res://src/props/Asteroids/Small/asteroid_small_1.tscn" id="3_2mgcq"]
+[ext_resource type="PackedScene" uid="uid://cxqrnd0ga2qtn" path="res://src/props/Asteroids/Small/asteroid_small_2.tscn" id="4_rfnvh"]
+[ext_resource type="PackedScene" uid="uid://d6fw0mntwor8" path="res://src/props/Asteroids/Small/asteroid_small_3.tscn" id="5_f20tq"]
+[ext_resource type="PackedScene" uid="uid://c38dy31oarm2c" path="res://src/props/Asteroids/Small/asteroid_small_4.tscn" id="6_pb6s3"]
+[ext_resource type="PackedScene" uid="uid://b2b6v3yvxd6e5" path="res://src/props/Asteroids/Small/asteroid_small_5.tscn" id="7_eexvs"]
+[ext_resource type="PackedScene" uid="uid://c4vnkw6q4is2c" path="res://src/props/Asteroids/Small/asteroid_small_6.tscn" id="8_mi1n2"]
+[ext_resource type="PackedScene" uid="uid://vbs3r1wkgq8g" path="res://src/props/Asteroids/Small/asteroid_small_7.tscn" id="9_uwnxv"]
+[ext_resource type="PackedScene" uid="uid://qnssnvsda0d7" path="res://src/props/Asteroids/Small/asteroid_small_8.tscn" id="10_xbxp1"]
+[ext_resource type="PackedScene" uid="uid://cqnu34i61r5xg" path="res://src/props/Asteroids/Small/asteroid_small_9.tscn" id="11_cresq"]
+[ext_resource type="PackedScene" uid="uid://cct8f7cw5l72v" path="res://src/props/Asteroids/Medium/asteroid_medium_1.tscn" id="12_pjv0n"]
+[ext_resource type="PackedScene" uid="uid://bsr760xd0auyy" path="res://src/props/Asteroids/Medium/asteroid_medium_2.tscn" id="13_y35ig"]
+[ext_resource type="PackedScene" uid="uid://bro4tnwkaaith" path="res://src/props/Asteroids/Medium/asteroid_medium_3.tscn" id="14_lynuu"]
+[ext_resource type="PackedScene" uid="uid://d3qm17m82lrt0" path="res://src/props/Asteroids/Medium/asteroid_medium_4.tscn" id="15_udk47"]
+[ext_resource type="PackedScene" uid="uid://baepsjyf6ts15" path="res://src/props/Asteroids/Medium/asteroid_medium_5.tscn" id="16_qt0ey"]
+[ext_resource type="PackedScene" uid="uid://ytbyab6pwhdd" path="res://src/props/Asteroids/Medium/asteroid_medium_6.tscn" id="17_hs8nv"]
+[ext_resource type="PackedScene" uid="uid://ciig6giw8jaj1" path="res://src/props/Asteroids/Large/asteroid_large_1.tscn" id="18_cewhh"]
+[ext_resource type="PackedScene" uid="uid://dneeoh5vf5rkm" path="res://src/props/Asteroids/Large/asteroid_large_2.tscn" id="19_1pk60"]
+[ext_resource type="PackedScene" uid="uid://bv0a0r2jfxhyc" path="res://src/props/Asteroids/Large/asteroid_large_3.tscn" id="20_mqq4q"]
+[ext_resource type="PackedScene" uid="uid://dwrpe3xo4rcpi" path="res://src/pickup_location.tscn" id="21_rl1ms"]
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("Player1SpawnPoint", "Player2SpawnPoint", "PlayerParent", "PickupLocationsSpawner", "AsteroidSpawner", "ProjectilesParent")]
+script = ExtResource("1_tvkp4")
+Player1SpawnPoint = NodePath("Spawnpoints/Player1SpawnPoint")
+Player2SpawnPoint = NodePath("Spawnpoints/Player2SpawnPoint")
+PlayerParent = NodePath("Ships")
+PickupLocationsSpawner = NodePath("Pickups")
+AsteroidSpawner = NodePath("Asteroids")
+ProjectilesParent = NodePath("Projectiles")
+
+[node name="Spawnpoints" type="Node2D" parent="."]
+
+[node name="Player2SpawnPoint" type="Node2D" parent="Spawnpoints"]
+position = Vector2(4500, 4500)
+
+[node name="Player1SpawnPoint" type="Node2D" parent="Spawnpoints"]
+position = Vector2(-4500, -4500)
+
+[node name="Asteroids" parent="." node_paths=PackedStringArray("RunAfter") instance=ExtResource("2_vqalc")]
+Width = 9500.0
+Height = 9500.0
+AmountX = 15
+AmountY = 15
+Center = true
+UseSeed = false
+Seed = 4
+Randomness = 0.65
+RandomlyRotate = true
+GenerateOnRun = true
+Scenes = [ExtResource("3_2mgcq"), ExtResource("4_rfnvh"), ExtResource("5_f20tq"), ExtResource("6_pb6s3"), ExtResource("7_eexvs"), ExtResource("8_mi1n2"), ExtResource("9_uwnxv"), ExtResource("10_xbxp1"), ExtResource("11_cresq"), ExtResource("12_pjv0n"), ExtResource("13_y35ig"), ExtResource("14_lynuu"), ExtResource("15_udk47"), ExtResource("16_qt0ey"), ExtResource("17_hs8nv"), ExtResource("18_cewhh"), ExtResource("19_1pk60"), ExtResource("20_mqq4q")]
+RunAfter = NodePath("../Pickups")
+DistanceParents = [NodePath("../Spawnpoints"), NodePath("../Pickups")]
+Distances = PackedFloat32Array(500, 300)
+_generate = false
+_clear = false
+
+[node name="Pickups" parent="." instance=ExtResource("2_vqalc")]
+Width = 9500.0
+Height = 9500.0
+AmountX = 5
+AmountY = 5
+Center = true
+UseSeed = false
+Seed = 4
+Randomness = 0.0
+RandomlyRotate = false
+GenerateOnRun = true
+Scenes = [ExtResource("21_rl1ms")]
+DistanceParents = [NodePath("../Spawnpoints")]
+Distances = PackedFloat32Array(500)
+_generate = false
+_clear = false
+
+[node name="Ships" type="Node2D" parent="."]
+
+[node name="Projectiles" type="Node2D" parent="."]

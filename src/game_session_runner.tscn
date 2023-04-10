@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmsw2tsyc5i65"]
+[gd_scene load_steps=3 format=3 uid="uid://dmsw2tsyc5i65"]
 
 [ext_resource type="Script" path="res://src/scripts/nodes/GameSessionRunner.cs" id="1_h5pnx"]
+[ext_resource type="PackedScene" uid="uid://dmpc07fe5mlss" path="res://src/ui/win_screen.tscn" id="3_wu255"]
 
 [node name="GameSessionRunner" type="Node"]
 script = ExtResource("1_h5pnx")
+_gameMenuPath = "res://src/ui/game_menu.tscn"
+_winScreen = ExtResource("3_wu255")

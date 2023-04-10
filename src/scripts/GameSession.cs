@@ -41,7 +41,7 @@ public partial class GameSession
     {
         Pickup pickup = GameData.GeneratePickup(texture);
 
-        IEnumerable<Node> pickupLocations = Level.Scene.PickupLocationsParent.GetChildren();
+        IEnumerable<Node> pickupLocations = Level.Scene.PickupLocationsSpawner.GetChildren();
 
         //get all spawn locations where there are no children
         Node[] avalible = pickupLocations.Where((Node node) => node.GetChildCount() == 0).ToArray();

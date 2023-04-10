@@ -23,6 +23,8 @@ public partial class TagGameMode : GameMode
     private float _originalMaxSpeed;
     private float _originalAcceleration;
 
+    private double _doneTime = 1d;
+
     public override void Begin()
     {
         PlayerShip ship1 = Session.SpawnPlayer(Session.GameData.Player1, 0.0001f);
@@ -36,7 +38,7 @@ public partial class TagGameMode : GameMode
         };
         CaptureHandler.PlayerWon += (Player player) =>
         {
-            Session.End(player);
+            Session.GameData.OtherPlayer(player).Ship.Explode();
         };
     }
 
@@ -73,6 +75,15 @@ public partial class TagGameMode : GameMode
     {
         CaptureHandler.Update(delta);
         Player runner = CaptureHandler.Holder;
+        if (Session.GameData.Player1.Ship == null || Session.GameData.Player2.Ship == null)
+        {
+            _doneTime -= delta;
+            if (_doneTime <= 0)
+            {
+                Session.End(Session.GameData.Player1.Ship == null ? Session.GameData.Player2 : Session.GameData.Player1);
+            }
+            runner = null;
+        }
         if (runner != null)
         {
             runner.Ship.FuelConsumption = _originalFuelConsumption;

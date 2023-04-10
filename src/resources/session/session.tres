@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://rsn8ircqmatb"]
+
+[ext_resource type="Script" path="res://src/scripts/resources/GameSessionDescription.cs" id="1_2mhdy"]
+[ext_resource type="Resource" uid="uid://erj2eufe5jsx" path="res://src/resources/game_data.tres" id="1_x76xh"]
+[ext_resource type="Resource" uid="uid://ong005afxswn" path="res://src/resources/session/session_level.tres" id="2_msdqr"]
+
+[resource]
+script = ExtResource("1_2mhdy")
+LevelDescription = ExtResource("2_msdqr")
+GameData = ExtResource("1_x76xh")

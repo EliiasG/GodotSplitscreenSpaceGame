@@ -1,0 +1,141 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmpc07fe5mlss"]
+
+[ext_resource type="Theme" uid="uid://dqytxw23kictt" path="res://src/resources/godot/theme.tres" id="1_u77ox"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/WinScreen.cs" id="2_jwero"]
+[ext_resource type="Texture2D" uid="uid://cgo5cl7yvts7c" path="res://Assets/Export/ButtonIcons/AButtonBig.png" id="2_qnn2e"]
+[ext_resource type="Resource" uid="uid://erj2eufe5jsx" path="res://src/resources/game_data.tres" id="3_fp2yj"]
+[ext_resource type="PackedScene" uid="uid://jvvhqmt1s6kq" path="res://src/ui/main_menu.tscn" id="3_v20x5"]
+
+[sub_resource type="Animation" id="Animation_bw54d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4e736"]
+resource_name = "appear"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ftnva"]
+resource_name = "disappear"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Finished"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a2563"]
+_data = {
+"RESET": SubResource("Animation_bw54d"),
+"appear": SubResource("Animation_4e736"),
+"disappear": SubResource("Animation_ftnva")
+}
+
+[node name="WinScreen" type="Control" node_paths=PackedStringArray("_animationPlayer", "_winLabel")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_u77ox")
+script = ExtResource("2_jwero")
+GameData = ExtResource("3_fp2yj")
+_player1WinText = "Red won!"
+_player2WinText = "Blue won!"
+_mainMenu = ExtResource("3_v20x5")
+_animationPlayer = NodePath("AnimationPlayer")
+_winLabel = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 100
+theme_override_font_sizes/font_size = 200
+text = "winner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a2563")
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = " Press "
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_qnn2e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = " To Continue"

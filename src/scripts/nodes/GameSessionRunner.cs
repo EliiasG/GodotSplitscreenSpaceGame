@@ -5,7 +5,15 @@ public partial class GameSessionRunner : Node
     private GameSession _session { get; set; }
 
     [Export]
-    public GameSessionDescription SessionDescription { get; private set; }
+    public GameSessionDescription SessionDescription { get; set; }
+
+    [Export(PropertyHint.File, "*.tscn,*.scn")]
+    private string _gameMenuPath { get; set; }
+
+    [Export]
+    private PackedScene _winScreen;
+
+    private bool _begun = false;
 
     public override void _Ready()
     {
@@ -15,16 +23,24 @@ public partial class GameSessionRunner : Node
 
         AddChild(_session.Mode.GenerateView(_session));
 
-        _session.Mode.Begin();
         _session.Finished += (Player player) =>
         {
-            GD.Print((player == _session.GameData.Player1 ? "Player 1" : "Player 2") + " won!");
-            GetTree().Quit();
+            Node gameMenu = GD.Load<PackedScene>(_gameMenuPath).Instantiate();
+            WinScreen winScreen = _winScreen.Instantiate<WinScreen>();
+            winScreen.Winner = player;
+            GetParent().AddChild(gameMenu);
+            gameMenu.AddChild(winScreen);
+            QueueFree();
         };
     }
 
     public override void _Process(double delta)
     {
         _session.Mode.Update(delta);
+        if (!_begun)
+        {
+            _session.Mode.CallDeferred("Begin");
+            _begun = true;
+        }
     }
 }

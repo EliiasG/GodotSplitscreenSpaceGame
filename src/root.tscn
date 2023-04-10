@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://uyjoimprafpy"]
+[gd_scene load_steps=4 format=3 uid="uid://uyjoimprafpy"]
 
 [ext_resource type="Script" path="res://src/scripts/nodes/Root.cs" id="1_ixgus"]
 [ext_resource type="PackedScene" uid="uid://cn4hhumtkidcv" path="res://src/ui/game_menu.tscn" id="2_fbkhm"]
+[ext_resource type="PackedScene" uid="uid://dayc8qhn84qep" path="res://src/ui/controls_selection.tscn" id="3_o8ge1"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_ixgus")
 
 [node name="GameMenu" parent="." instance=ExtResource("2_fbkhm")]
+
+[node name="ControlsSelection" parent="GameMenu" instance=ExtResource("3_o8ge1")]
+layout_mode = 1

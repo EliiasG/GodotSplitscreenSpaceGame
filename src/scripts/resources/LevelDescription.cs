@@ -11,7 +11,8 @@ public partial class LevelDescription : Resource
     public Level GenerateLevel()
     {
         LevelScene scene = Scene.Instantiate<LevelScene>();
-        if (scene.PickupLocationsParent.GetChildCount() < 10)
+        scene.LevelData = Data;
+        if (scene.PickupLocationsSpawner.GetChildCount() < 10)
         {
             GD.PushError("There must be at least 10 pickup locations");
         }

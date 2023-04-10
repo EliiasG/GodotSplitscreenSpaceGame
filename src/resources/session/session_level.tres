@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://ong005afxswn"]
+
+[ext_resource type="Resource" uid="uid://r5s7gaeje08m" path="res://src/resources/session/session_level_data.tres" id="1_ieg0i"]
+[ext_resource type="Script" path="res://src/scripts/resources/LevelDescription.cs" id="2_futbw"]
+[ext_resource type="PackedScene" uid="uid://cqkm2e14f3qf4" path="res://src/level.tscn" id="2_jecd7"]
+
+[resource]
+script = ExtResource("2_futbw")
+Scene = ExtResource("2_jecd7")
+Data = ExtResource("1_ieg0i")

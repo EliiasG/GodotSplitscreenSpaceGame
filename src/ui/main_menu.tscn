@@ -121,7 +121,6 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../ControlsButton")
 focus_neighbor_bottom = NodePath("../TutorialButton")
 text = "Play"
-SelectedColor = Color(0.34902, 1, 0.54902, 1)
 MainMenu = NodePath("../..")
 ScenePath = "res://src/ui/play_menu.tscn"
 

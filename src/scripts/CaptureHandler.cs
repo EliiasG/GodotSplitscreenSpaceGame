@@ -9,6 +9,8 @@ public partial class CaptureHandler
 
     private Dictionary<Player, double> _playerTimes = new Dictionary<Player, double>();
 
+    private bool _done = false;
+
     public event Action<Player> PlayerWon;
 
     public CaptureHandler(double captureTime)
@@ -27,9 +29,10 @@ public partial class CaptureHandler
 
         time += delta;
 
-        if (time >= CaptureTime)
+        if (time >= CaptureTime && !_done)
         {
             PlayerWon?.Invoke(Holder);
+            _done = true;
         }
 
         _playerTimes[Holder] = time;

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c82avaft375r4"]
 
-[ext_resource type="PackedScene" path="res://src/ui/value_bar.tscn" id="1_4wul4"]
-[ext_resource type="Script" path="res://src/ui/gamemodes/elements/CaptureIndicators.cs" id="1_k7t5u"]
+[ext_resource type="PackedScene" uid="uid://7ngveoqd44sc" path="res://src/ui/value_bar.tscn" id="1_4wul4"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/CaptureIndicators.cs" id="1_u8o4w"]
 
 [node name="CaptureIndicators" type="Control" node_paths=PackedStringArray("_player1bar", "_player2bar")]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k7t5u")
+script = ExtResource("1_u8o4w")
 _player1bar = NodePath("ValueBar1")
 _player2bar = NodePath("ValueBar2")
 
