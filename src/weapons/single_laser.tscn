@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/scripts/nodes/weapons/Weapon.cs" id="1_awxm5"]
 [ext_resource type="Script" path="res://src/scripts/nodes/weapons/shooters/LaserShooter.cs" id="2_4ao3t"]
 [ext_resource type="PackedScene" uid="uid://dm48fscs2ruhw" path="res://src/weapons/projectiles/laser_beam.tscn" id="3_nli4r"]
-[ext_resource type="Texture2D" uid="uid://6pkxkwi6lifm" path="res://Assets/Export/Weapons/BigLaser.png" id="4_ekqf7"]
+[ext_resource type="Texture2D" uid="uid://v3hjpyeep03g" path="res://Assets/Export/Weapons/BigLaser.png" id="4_ekqf7"]
 
 [sub_resource type="Animation" id="Animation_h2gog"]
 length = 0.001
@@ -68,6 +68,7 @@ _data = {
 }
 
 [node name="SingleLaser" type="Node2D"]
+show_behind_parent = true
 script = ExtResource("1_awxm5")
 UseAmmo = true
 MaxAmmo = 10
@@ -94,7 +95,6 @@ libraries = {
 }
 
 [node name="Sprite" type="Sprite2D" parent="Laser"]
-z_index = -1
 position = Vector2(0, -14)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_ekqf7")

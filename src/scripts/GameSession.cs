@@ -7,14 +7,14 @@ public partial class GameSession
 {
     public GameSession(GameMode mode, Level level, GameData gameData)
     {
-        Mode = mode;
+        GameMode = mode;
         Level = level;
         GameData = gameData;
 
-        Mode.Session = this;
+        GameMode.Session = this;
     }
 
-    public GameMode Mode { get; }
+    public GameMode GameMode { get; }
 
     public Level Level { get; }
 

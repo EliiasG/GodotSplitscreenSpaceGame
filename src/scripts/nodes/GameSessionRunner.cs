@@ -21,7 +21,7 @@ public partial class GameSessionRunner : Node
 
         _session.GameData.Map.Level = _session.Level.Data;
 
-        AddChild(_session.Mode.GenerateView(_session));
+        AddChild(_session.GameMode.GenerateView(_session));
 
         _session.Finished += (Player player) =>
         {
@@ -36,10 +36,10 @@ public partial class GameSessionRunner : Node
 
     public override void _Process(double delta)
     {
-        _session.Mode.Update(delta);
+        _session.GameMode.Update(delta);
         if (!_begun)
         {
-            _session.Mode.CallDeferred("Begin");
+            _session.GameMode.CallDeferred("Begin");
             _begun = true;
         }
     }

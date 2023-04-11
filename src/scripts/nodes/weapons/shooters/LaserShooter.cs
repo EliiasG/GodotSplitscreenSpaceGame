@@ -26,7 +26,7 @@ public partial class LaserShooter : Shooter
         if (_rayCast.GetCollider() is WeaponCollider weaponCollider)
         {
             PlayerShip ship = weaponCollider.Ship;
-            ship.Session.Mode.HitShip(ship, Damage);
+            ship.Session.GameMode.HitShip(ship, Damage);
         }
     }
 }

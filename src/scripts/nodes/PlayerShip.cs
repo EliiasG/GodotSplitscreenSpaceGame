@@ -101,7 +101,7 @@ public partial class PlayerShip : CharacterBody2D
 		_animationPlayer.SpeedScale = 1f / SpawnTime;
 		GetNode<Area2D>("Collider").BodyEntered += (Node2D body) =>
 		{
-			Session.Mode.ShipCollidedWithAsteroid(this, body);
+			Session.GameMode.ShipCollidedWithAsteroid(this, body);
 		};
 		GetNode<Sprite2D>("Sprite").Texture = Player.Texture;
 		_mapper = GetNode<Mappable>("Mapper");

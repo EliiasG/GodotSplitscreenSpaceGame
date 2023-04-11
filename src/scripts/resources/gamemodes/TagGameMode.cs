@@ -23,7 +23,7 @@ public partial class TagGameMode : GameMode
     private float _originalMaxSpeed;
     private float _originalAcceleration;
 
-    private double _doneTime = 1d;
+    private double _doneTime;
 
     public override void Begin()
     {
@@ -44,6 +44,7 @@ public partial class TagGameMode : GameMode
 
     public override void PrepareView(GameModeView view)
     {
+        _doneTime = 2d;
         CaptureHandler = new(WinTime);
         if (view is not TagGameModeView tagView)
         {
