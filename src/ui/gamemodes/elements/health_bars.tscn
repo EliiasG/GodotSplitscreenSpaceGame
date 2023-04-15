@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm634tnldtr4a"]
+
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/HealthBars.cs" id="1_kf5x7"]
+[ext_resource type="PackedScene" uid="uid://7ngveoqd44sc" path="res://src/ui/value_bar.tscn" id="1_vy7nt"]
+
+[node name="HealthBars" type="Control" node_paths=PackedStringArray("Player1HealthBar", "Player2HealthBar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kf5x7")
+Player1HealthBar = NodePath("Player1Bar")
+Player2HealthBar = NodePath("Player2Bar")
+
+[node name="Player1Bar" parent="." instance=ExtResource("1_vy7nt")]
+offset_left = 30.0
+offset_right = 222.0
+offset_bottom = 32.0
+scale = Vector2(1.5, 1.5)
+BackgroundColor = Color(0.639216, 0, 0.227451, 1)
+BarColor = Color(0.913725, 0, 0.341176, 1)
+
+[node name="Player2Bar" parent="." instance=ExtResource("1_vy7nt")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_right = 162.0
+offset_bottom = 32.0
+grow_horizontal = 0
+scale = Vector2(-1.5, 1.5)
+BackgroundColor = Color(0.639216, 0, 0.227451, 1)
+BarColor = Color(0.913725, 0, 0.341176, 1)

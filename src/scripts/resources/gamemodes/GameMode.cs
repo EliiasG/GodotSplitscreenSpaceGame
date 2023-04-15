@@ -25,14 +25,19 @@ public abstract partial class GameMode : Resource
     public virtual void HitShip(PlayerShip ship, int damage)
     {
         ship.Explode();
+        Session.End(Session.GameData.OtherPlayer(ship.Player));
     }
 
     public virtual void Begin()
     {
-
     }
 
     public virtual void Update(double delta)
     {
+    }
+
+    public virtual void ShipDied(PlayerShip player)
+    {
+        
     }
 }

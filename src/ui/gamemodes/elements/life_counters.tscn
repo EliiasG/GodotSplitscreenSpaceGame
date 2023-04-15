@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://degstatwxl7np"]
+
+[ext_resource type="Theme" uid="uid://dqytxw23kictt" path="res://src/resources/godot/theme.tres" id="1_673mf"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/LifeCounters.cs" id="2_mdvo3"]
+
+[node name="LifeCounters" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_673mf")
+script = ExtResource("2_mdvo3")
+
+[node name="Player1Life" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -328.0
+offset_right = -28.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 75
+text = "10"
+horizontal_alignment = 2
+
+[node name="Player2Life" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 28.0
+offset_right = 328.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 75
+text = "10"

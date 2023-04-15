@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://buqkjxll0m3gf"]
+
+[ext_resource type="Texture2D" uid="uid://cpjjt1s1jw6ym" path="res://Assets/Export/Pickups/LaserPickup.png" id="1_vpaoy"]
+[ext_resource type="PackedScene" uid="uid://df5u6sfrgwsdl" path="res://src/weapons/single_laser.tscn" id="2_8w3v4"]
+[ext_resource type="Script" path="res://src/scripts/resources/PickupWeapon.cs" id="3_vbmx8"]
+
+[resource]
+script = ExtResource("3_vbmx8")
+WeaponScene = ExtResource("2_8w3v4")
+PickupTexture = ExtResource("1_vpaoy")

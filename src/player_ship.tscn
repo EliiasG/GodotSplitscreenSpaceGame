@@ -1,20 +1,20 @@
 [gd_scene load_steps=29 format=3 uid="uid://cwf7ct2rnkqus"]
 
 [ext_resource type="Script" path="res://src/scripts/nodes/PlayerShip.cs" id="1_y2gp3"]
-[ext_resource type="Texture2D" uid="uid://b3505r4r7mitg" path="res://Assets/Export/Exhaust.png" id="3_g7gb5"]
+[ext_resource type="Texture2D" uid="uid://bnf337myglyuu" path="res://Assets/Export/Exhaust.png" id="3_g7gb5"]
 [ext_resource type="Script" path="res://src/scripts/nodes/FireParticles.cs" id="3_nollm"]
-[ext_resource type="Texture2D" uid="uid://b2ghp38kmqp1i" path="res://Assets/Export/RedShip.png" id="4_rexss"]
+[ext_resource type="Texture2D" uid="uid://e0aaniccqha4" path="res://Assets/Export/RedShip.png" id="4_rexss"]
 [ext_resource type="Script" path="res://src/scripts/nodes/Mappable.cs" id="5_h5wue"]
 [ext_resource type="Script" path="res://src/scripts/nodes/weapons/WeaponCollider.cs" id="6_gn5t3"]
 [ext_resource type="Script" path="res://src/scripts/nodes/PlayerArrow.cs" id="7_5awat"]
-[ext_resource type="Texture2D" uid="uid://cagg3beytjbs6" path="res://Assets/Export/PlayerArrow.png" id="7_5y6kv"]
+[ext_resource type="Texture2D" uid="uid://b3vgum1ou6e75" path="res://Assets/Export/PlayerArrow.png" id="7_5y6kv"]
 
 [sub_resource type="Curve" id="Curve_7m6as"]
 _data = [Vector2(0, 0.127273), 0.0, 2.34574, 0, 0, Vector2(1, 1), -0.0836829, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_yud1l"]
-_data = [Vector2(0, 0), 0.0, -0.0363636, 0, 0, Vector2(1, 1), 3.10157, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0412228, 0, 0, Vector2(1, 1), 1.37228, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_7bvr3"]
@@ -22,7 +22,7 @@ _data = [Vector2(0, 0), 0.0, 3.36694, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_5ke1d"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.164948, 1), -0.030941, -0.030941, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.353448), 0.0, 0.0, 0, 0, Vector2(0.365019, 1), -0.030941, -0.030941, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_8yupg"]
@@ -136,6 +136,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.476217, 0, 0.108027, 0), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
 
 [sub_resource type="Animation" id="Animation_p50ux"]
 resource_name = "explode"
@@ -208,6 +220,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0.5, 0.5), Vector2(0.3, 0.3), Vector2(0.5, 0.5)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_g4w3n"]
 resource_name = "spawn"
@@ -278,6 +302,7 @@ RotationSpeed = 15.0
 BorderForce = 1000.0
 MaxSpeed = 750.0
 AccelerationAmount = 750.0
+FuelConsumption = 0.3
 FuelRegeneration = 0.3
 RotationCurve = SubResource("Curve_7m6as")
 ThrustCurve = SubResource("Curve_yud1l")

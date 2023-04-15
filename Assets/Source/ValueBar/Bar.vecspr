@@ -20,7 +20,7 @@
         "Name": "Bar",
         "Position": {
           "X": -0,
-          "Y": -0.5
+          "Y": -0
         },
         "Geometry": {
           "Points": [

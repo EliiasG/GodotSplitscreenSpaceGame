@@ -70,6 +70,8 @@ public partial class PlayerShip : CharacterBody2D
 	[Export]
 	public float AimAssistDistance { get; private set; } = 1000f;
 
+	public Vector2 Acceleration { get; private set; }
+
 	public float Fuel { get; set; } = 1;
 
 	public bool CanMove { get; set; } = false;
@@ -81,6 +83,10 @@ public partial class PlayerShip : CharacterBody2D
 	public float BaseThrust => CanMove ? ThrustCurve.Sample(Input.GetActionStrength(Player.Controls.Thrust)) : 0;
 
 	public float Thrust => BaseThrust * ThrustYield;
+
+	public int MaxHealth { get; set; }
+
+	public int Health { get; set; }
 
 	public override void _EnterTree()
 	{
@@ -107,6 +113,8 @@ public partial class PlayerShip : CharacterBody2D
 		_mapper = GetNode<Mappable>("Mapper");
 		_mapper.Texture = Player.MapTexture;
 		_mapper.GameData = Session.GameData;
+
+		Health = MaxHealth;
 	}
 
 
@@ -133,7 +141,7 @@ public partial class PlayerShip : CharacterBody2D
 
 		if (baseThrust != 0)
 		{
-			Fuel = Mathf.Lerp(Fuel, 0, FuelConsumptionCurve.Sample(BaseThrust) * FuelConsumption * (float)delta);
+			Fuel = Mathf.MoveToward(Fuel, 0, FuelConsumptionCurve.Sample(Thrust) * FuelConsumption * (float)delta);
 		}
 		else
 		{
@@ -174,7 +182,8 @@ public partial class PlayerShip : CharacterBody2D
 		//Position = new Vector2(Mathf.Clamp(Position.X, -Level.Width / 2, Level.Width / 2), Mathf.Clamp(Position.Y, -Level.Height / 2, Level.Height / 2));
 
 		//velocity -= velocity * Thrust * (float)delta;
-		velocity += Vector2.Up.Rotated(Transform.Rotation) * Thrust * AccelerationAmount * (float)delta;
+		Acceleration = Vector2.Up.Rotated(Transform.Rotation) * Thrust * AccelerationAmount * (float)delta;
+		velocity += Acceleration;
 
 		Velocity = velocity;
 		MoveAndSlide();
@@ -200,16 +209,25 @@ public partial class PlayerShip : CharacterBody2D
 		_animationPlayer.Play("hit");
 	}
 
+	public void Damage(int amount)
+	{
+		Health -= amount;
+		if (Health <= 0)
+		{
+			Session.GameMode.ShipDied(this);
+		}
+		else
+		{
+			PlayHit();
+		}
+	}
+
 	public void Explode()
 	{
-		if (CanMove == false)
-		{
-			return;
-		}
+		if (!CanMove) return;
 		_mapper.QueueFree();
 		CanMove = false;
 		Player.Ship = null;
-
 		_animationPlayer.Play("explode");
 	}
 

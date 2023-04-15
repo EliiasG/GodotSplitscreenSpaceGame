@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://vbe1fls3hxqa"]
 
-[ext_resource type="PackedScene" path="res://src/ui/value_bar.tscn" id="1_uv6rb"]
+[ext_resource type="PackedScene" uid="uid://7ngveoqd44sc" path="res://src/ui/value_bar.tscn" id="1_uv6rb"]
 [ext_resource type="Script" path="res://src/scripts/nodes/ui/FuelValueBar.cs" id="2_esist"]
 
 [node name="FuelValueBar" type="CenterContainer"]

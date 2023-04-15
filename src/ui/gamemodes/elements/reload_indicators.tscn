@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://h00g7ycxhqno"]
 
 [ext_resource type="PackedScene" uid="uid://d2l5bhblkkmrv" path="res://src/ui/reload_value_bar.tscn" id="1_b523j"]
-[ext_resource type="Resource" uid="uid://ci0qjfskvikdi" path="res://src/resources/player1.tres" id="2_xkfkq"]
-[ext_resource type="Resource" uid="uid://7arj7ini0iwj" path="res://src/resources/player2.tres" id="3_immkt"]
+[ext_resource type="Resource" uid="uid://dbgkpwhg7v64" path="res://src/resources/player1.tres" id="2_xkfkq"]
+[ext_resource type="Resource" uid="uid://byd323j6up5jl" path="res://src/resources/player2.tres" id="3_immkt"]
 
 [node name="ReloadIndicators" type="Control"]
 layout_mode = 3

@@ -7,6 +7,6 @@ public partial class ValueBarBackGround : TextureRect
 
     public override void _Ready()
     {
-        Modulate = ValueBar.BackgroundColor;
+        SelfModulate = ValueBar.BackgroundColor;
     }
 }

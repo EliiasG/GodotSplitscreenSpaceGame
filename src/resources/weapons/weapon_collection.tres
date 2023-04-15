@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://mkhnhx4tfj3m"]
+
+[ext_resource type="Resource" uid="uid://buqkjxll0m3gf" path="res://src/resources/weapons/big_laser.tres" id="1_vcqrs"]
+[ext_resource type="Script" path="res://src/scripts/resources/WeaponCollection.cs" id="2_uetwl"]
+
+[resource]
+script = ExtResource("2_uetwl")
+Weapons = Array[Resource]([ExtResource("1_vcqrs")])

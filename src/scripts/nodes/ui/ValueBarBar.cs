@@ -12,6 +12,6 @@ public partial class ValueBarBar : TextureRect
 
     public override void _Process(double delta)
     {
-        Position = new Vector2(Mathf.Lerp(-190, -3, Mathf.Clamp(ValueBar.Value, 0, 1)), -3.5f);
+        Position = new Vector2(Mathf.Lerp(-192, -7, Mathf.Clamp(ValueBar.Value, 0, 1)), -.5f);
     }
 }
