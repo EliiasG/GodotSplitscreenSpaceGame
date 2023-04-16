@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/scripts/nodes/weapons/Weapon.cs" id="1_awxm5"]
 [ext_resource type="Script" path="res://src/scripts/nodes/weapons/shooters/LaserShooter.cs" id="2_4ao3t"]
 [ext_resource type="PackedScene" uid="uid://dm48fscs2ruhw" path="res://src/weapons/projectiles/laser_beam.tscn" id="3_nli4r"]
-[ext_resource type="Texture2D" uid="uid://v3hjpyeep03g" path="res://Assets/Export/Weapons/BigLaser.png" id="4_ekqf7"]
+[ext_resource type="Texture2D" uid="uid://bdqksymkdwrkq" path="res://Assets/Export/Weapons/BigLaser.png" id="4_ekqf7"]
 
 [sub_resource type="Animation" id="Animation_h2gog"]
 length = 0.001
@@ -30,6 +30,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, -14)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -36)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
 }
 
 [sub_resource type="Animation" id="Animation_tlshr"]
@@ -60,6 +84,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, -14), Vector2(0, -9), Vector2(0, -14)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -36)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(0.6, 0.4)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e2ljd"]
 _data = {
@@ -68,16 +116,16 @@ _data = {
 }
 
 [node name="SingleLaser" type="Node2D"]
-show_behind_parent = true
 script = ExtResource("1_awxm5")
 UseAmmo = true
-MaxAmmo = 10
-ReloadTime = 0.5
+MaxAmmo = 25
+Repeat = true
+ReloadTime = 0.3
 
 [node name="Laser" type="Node2D" parent="." node_paths=PackedStringArray("_rayCast", "Weapon", "_animationPlayer")]
 position = Vector2(0, -22)
 script = ExtResource("2_4ao3t")
-Damage = 10
+Damage = 8
 _beam = ExtResource("3_nli4r")
 _rayCast = NodePath("RayCast2D")
 Weapon = NodePath("..")

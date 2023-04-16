@@ -1,6 +1,7 @@
 {
   "Root": {
     "Name": "Root",
+    "IsVisible": true,
     "Position": {
       "X": 0,
       "Y": 0

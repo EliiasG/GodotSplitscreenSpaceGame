@@ -1,14 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://clusilnduc7sq"]
+[gd_scene load_steps=19 format=3 uid="uid://clusilnduc7sq"]
 
 [ext_resource type="Theme" uid="uid://dqytxw23kictt" path="res://src/resources/godot/theme.tres" id="1_l2jx2"]
 [ext_resource type="Script" path="res://src/scripts/nodes/ui/PlayMenu.cs" id="1_xlddj"]
 [ext_resource type="Resource" uid="uid://bmnnwahjwsfk8" path="res://src/resources/gamemodes/tag_mode_info.tres" id="2_px06q"]
-[ext_resource type="Texture2D" uid="uid://bwsssnjsnl6vo" path="res://Assets/Export/SelectionArrowBig.png" id="4_4jk2y"]
+[ext_resource type="Texture2D" uid="uid://cotl5glgnxplo" path="res://Assets/Export/SelectionArrowBig.png" id="4_4jk2y"]
+[ext_resource type="Resource" uid="uid://dcna1u0l7700a" path="res://src/resources/gamemodes/battle_mode_info.tres" id="4_p2h0s"]
 [ext_resource type="Resource" uid="uid://rsn8ircqmatb" path="res://src/resources/session/session.tres" id="4_tbvtl"]
 [ext_resource type="PackedScene" uid="uid://jvvhqmt1s6kq" path="res://src/ui/main_menu.tscn" id="6_beuah"]
 [ext_resource type="PackedScene" uid="uid://5cdbjqyift06" path="res://src/ui/play_menu_setting.tscn" id="6_yfx3v"]
-[ext_resource type="Texture2D" uid="uid://dcgduibuj60nw" path="res://Assets/Export/ButtonIcons/AButtonBig.png" id="7_sgah4"]
-[ext_resource type="Texture2D" uid="uid://pn2joofkxob0" path="res://Assets/Export/ButtonIcons/BButtonBig.png" id="8_tqu6q"]
+[ext_resource type="Texture2D" uid="uid://dbchchkhmd6qf" path="res://Assets/Export/ButtonIcons/AButtonBig.png" id="7_sgah4"]
+[ext_resource type="Texture2D" uid="uid://cthq8tai200fw" path="res://Assets/Export/ButtonIcons/BButtonBig.png" id="8_tqu6q"]
 
 [sub_resource type="Animation" id="Animation_7tpo3"]
 length = 0.001
@@ -198,7 +199,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_l2jx2")
 script = ExtResource("1_xlddj")
-GameModes = Array[Resource]([ExtResource("2_px06q")])
+GameModes = Array[Resource]([ExtResource("2_px06q"), ExtResource("4_p2h0s")])
 GameSessionDescription = ExtResource("4_tbvtl")
 _modeLabel = NodePath("VBoxContainer/ModeSelect/ModeBox/ModeLabel")
 _configurationModeLabel = NodePath("VBoxContainer/ModeConfiguration/ModeLabel")

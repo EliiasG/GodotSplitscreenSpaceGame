@@ -36,9 +36,6 @@ public abstract partial class Shooter : Node2D
     private void PlayFire()
     {
         Fire();
-        if (_animationPlayer != null)
-        {
-            _animationPlayer.Play("fire");
-        }
+        _animationPlayer?.Play("fire");
     }
 }

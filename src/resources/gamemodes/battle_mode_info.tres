@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dcna1u0l7700a"]
+
+[ext_resource type="Resource" uid="uid://io84rggwauj5" path="res://src/resources/gamemodes/battle_mode.tres" id="1_pqxg3"]
+[ext_resource type="Script" path="res://src/scripts/resources/gamemodes/BattleGameModeInfo.cs" id="2_mhflw"]
+
+[resource]
+script = ExtResource("2_mhflw")
+GameMode = ExtResource("1_pqxg3")

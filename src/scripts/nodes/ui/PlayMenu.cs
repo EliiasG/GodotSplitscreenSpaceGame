@@ -132,27 +132,21 @@ public partial class PlayMenu : Control
             _settings.RemoveChild(child);
         }
         PlayMenuSetting first = null;
-        PlayMenuSetting prev = null;
+        PlayMenuSetting last = null;
 
         foreach (IPropertyOptions options in Options)
         {
             PlayMenuSetting setting = _playMenuSetting.Instantiate<PlayMenuSetting>();
             setting.Options = options;
 
-            if (prev != null)
-            {
-                setting.FocusNeighborTop = prev.GetPath();
-                prev.FocusNeighborBottom = setting.GetPath();
-            }
-
             first ??= setting;
-            prev = setting;
+            last = setting;
 
             _settings.AddChild(setting);
         }
 
-        first.FocusNeighborTop = prev.GetPath();
-        prev.FocusNeighborBottom = first.GetPath();
+        first.FocusNeighborTop = last.GetPath();
+        last.FocusNeighborBottom = first.GetPath();
 
         first.GrabFocus();
     }

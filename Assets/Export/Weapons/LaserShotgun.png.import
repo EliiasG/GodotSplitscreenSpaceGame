@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmlhdt6v3cotk"
-path="res://.godot/imported/BigLaserIconBig.png-ae3e955a57cbfaa3a2455222f9f10bab.ctex"
+uid="uid://bje5csc55q5t6"
+path="res://.godot/imported/LaserShotgun.png-e63a9020dd4b0ee01d965a9f38e1fe70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Export/Weapons/BigLaserIconBig.png"
-dest_files=["res://.godot/imported/BigLaserIconBig.png-ae3e955a57cbfaa3a2455222f9f10bab.ctex"]
+source_file="res://Assets/Export/Weapons/LaserShotgun.png"
+dest_files=["res://.godot/imported/LaserShotgun.png-e63a9020dd4b0ee01d965a9f38e1fe70.ctex"]
 
 [params]
 

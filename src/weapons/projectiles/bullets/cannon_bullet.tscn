@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3g0ltn168hst"]
+
+[ext_resource type="PackedScene" uid="uid://ciptt3tnft38k" path="res://src/weapons/projectiles/bullets/bullet.tscn" id="1_6vb1s"]
+
+[node name="CannonBullet" instance=ExtResource("1_6vb1s")]
+Speed = 500.0
+Damage = 50

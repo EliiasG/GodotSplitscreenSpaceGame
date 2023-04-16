@@ -36,8 +36,8 @@ public abstract partial class GameMode : Resource
     {
     }
 
-    public virtual void ShipDied(PlayerShip player)
+    public virtual void ShipDied(PlayerShip ship)
     {
-        
+
     }
 }

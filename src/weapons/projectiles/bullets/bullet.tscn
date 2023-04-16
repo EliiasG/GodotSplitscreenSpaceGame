@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciptt3tnft38k"]
+
+[ext_resource type="Script" path="res://src/scripts/nodes/weapons/projectiles/Bullet.cs" id="1_7624w"]
+[ext_resource type="Texture2D" uid="uid://benu0dumljutl" path="res://Assets/Export/Weapons/Bullets/StandardBullet.png" id="1_pfnxi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_faxah"]
+height = 28.0
+
+[node name="Bullet" type="Node2D" node_paths=PackedStringArray("_collider")]
+script = ExtResource("1_7624w")
+Speed = 750.0
+Damage = 1
+_collider = NodePath("Collider")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_pfnxi")
+
+[node name="Collider" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
+shape = SubResource("CapsuleShape2D_faxah")

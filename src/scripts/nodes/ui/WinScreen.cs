@@ -27,13 +27,13 @@ public partial class WinScreen : Control
     {
         _animationPlayer.Play("appear");
         _winLabel.Text = Winner == GameData.Player1 ? _player1WinText : _player2WinText;
-        _winLabel.AddThemeColorOverride("font_color", Winner.ProjectileColor);
+        _winLabel.Modulate = Winner?.ProjectileColor ?? new Color(1, 1, 1, 0);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("ui_accept"))
+        if (Input.IsActionJustPressed("ui_accept") || Winner == null)
         {
             _animationPlayer.Play("disappear");
         }

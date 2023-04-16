@@ -1,6 +1,7 @@
 {
   "Root": {
     "Name": "Root",
+    "IsVisible": true,
     "Position": {
       "X": 0,
       "Y": 0
@@ -18,6 +19,7 @@
     "Children": [
       {
         "Name": "Body",
+        "IsVisible": true,
         "Position": {
           "X": -0,
           "Y": 0.25
@@ -81,6 +83,7 @@
         "Children": [
           {
             "Name": "Engine",
+            "IsVisible": true,
             "Position": {
               "X": 0,
               "Y": 0
@@ -137,6 +140,7 @@
           },
           {
             "Name": "Cockpit",
+            "IsVisible": true,
             "Position": {
               "X": -0,
               "Y": 0.5
@@ -195,6 +199,7 @@
       },
       {
         "Name": "Wing",
+        "IsVisible": true,
         "Position": {
           "X": -0.625,
           "Y": 0.25
@@ -247,6 +252,7 @@
       },
       {
         "Name": "Mirror",
+        "IsVisible": true,
         "Position": {
           "X": 0,
           "Y": 0

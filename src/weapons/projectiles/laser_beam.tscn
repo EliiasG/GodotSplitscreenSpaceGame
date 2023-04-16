@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dm48fscs2ruhw"]
 
 [ext_resource type="Script" path="res://src/scripts/nodes/weapons/projectiles/LaserBeam.cs" id="1_u4aty"]
-[ext_resource type="Texture2D" uid="uid://ci2ofnfa8vlfx" path="res://Assets/Export/Particle.png" id="2_wy27l"]
+[ext_resource type="Texture2D" uid="uid://ie083ckxn886" path="res://Assets/Export/Particle.png" id="2_wy27l"]
 
 [sub_resource type="Animation" id="Animation_fpky5"]
 length = 0.001

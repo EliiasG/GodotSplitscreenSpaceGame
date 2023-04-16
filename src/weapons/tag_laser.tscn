@@ -3,8 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://df5u6sfrgwsdl" path="res://src/weapons/single_laser.tscn" id="1_k3t52"]
 
 [node name="TagLaser" instance=ExtResource("1_k3t52")]
-show_behind_parent = false
 UseAmmo = false
 MaxAmmo = 0
-Repeat = true
-ReloadTime = 0.3

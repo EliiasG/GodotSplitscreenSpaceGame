@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/scripts/nodes/Mappable.cs" id="1_ca3tq"]
 [ext_resource type="Resource" uid="uid://erj2eufe5jsx" path="res://src/resources/game_data.tres" id="2_ksxak"]
-[ext_resource type="Texture2D" uid="uid://ct8wb5oqrcy1o" path="res://Assets/Export/Markers/AsteroidMarker.png" id="3_ojsml"]
+[ext_resource type="Texture2D" uid="uid://cvmpvi6pcohs0" path="res://Assets/Export/Markers/AsteroidMarker.png" id="3_ojsml"]
 
 [node name="Asteroid" type="StaticBody2D"]
 collision_mask = 0

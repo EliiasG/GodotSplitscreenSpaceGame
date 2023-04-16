@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dqytxw23kictt" path="res://src/resources/godot/theme.tres" id="1_673mf"]
 [ext_resource type="Script" path="res://src/scripts/nodes/ui/LifeCounters.cs" id="2_mdvo3"]
 
-[node name="LifeCounters" type="Control"]
+[node name="LifeCounters" type="Control" node_paths=PackedStringArray("Player1LifeCounter", "Player2LifeCounter")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_673mf")
 script = ExtResource("2_mdvo3")
+Player1LifeCounter = NodePath("Player1Life")
+Player2LifeCounter = NodePath("Player2Life")
 
 [node name="Player1Life" type="Label" parent="."]
 layout_mode = 1

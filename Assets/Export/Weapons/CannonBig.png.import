@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf25e43kigya8"
-path="res://.godot/imported/BigLaserIcon.png-1c87d674b17bd5de19bb879f9c32aefd.ctex"
+uid="uid://bwwwrvtuxyh24"
+path="res://.godot/imported/CannonBig.png-a65afda6a6797d7a92f082c7151f647f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Export/Weapons/BigLaserIcon.png"
-dest_files=["res://.godot/imported/BigLaserIcon.png-1c87d674b17bd5de19bb879f9c32aefd.ctex"]
+source_file="res://Assets/Export/Weapons/CannonBig.png"
+dest_files=["res://.godot/imported/CannonBig.png-a65afda6a6797d7a92f082c7151f647f.ctex"]
 
 [params]
 

@@ -22,7 +22,7 @@ public partial class GameSession
 
     public event Action<Player> Finished;
 
-    public PlayerShip SpawnPlayer(Player player, float spawnTime = 1f)
+    public PlayerShip SpawnPlayer(Player player, float spawnTime = 1f, int maxHealth = 100)
     {
         if (player.Ship != null)
         {
@@ -30,6 +30,7 @@ public partial class GameSession
         }
         PlayerShip ship = GameData.GenerateShip(player, this);
         ship.SpawnTime = spawnTime;
+        ship.MaxHealth = maxHealth;
         Level.Scene.PlayerParent.CallDeferred(Node.MethodName.AddChild, ship);
         Node2D spawnpoint = player == GameData.Player1 ? Level.Scene.Player1SpawnPoint : Level.Scene.Player2SpawnPoint;
         ship.GlobalPosition = spawnpoint.GlobalPosition;

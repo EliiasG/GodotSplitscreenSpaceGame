@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cy7vubpeckqqt"]
+[gd_scene load_steps=17 format=3 uid="uid://bl80mn2uslpdc"]
 
+[ext_resource type="Theme" uid="uid://dqytxw23kictt" path="res://src/resources/godot/theme.tres" id="1_7ei3c"]
 [ext_resource type="PackedScene" uid="uid://pla5smnach2t" path="res://src/world.tscn" id="1_n8mam"]
-[ext_resource type="Script" path="res://src/scripts/nodes/GameModeView.cs" id="1_t4erg"]
 [ext_resource type="Script" path="res://src/scripts/nodes/PlayerCamera.cs" id="2_bibt6"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/GameModeView.cs" id="2_fhn3k"]
 [ext_resource type="Resource" uid="uid://dbgkpwhg7v64" path="res://src/resources/player1.tres" id="3_yu4la"]
 [ext_resource type="PackedScene" uid="uid://wswpayteocju" path="res://src/stars.tscn" id="4_ocwqv"]
 [ext_resource type="Resource" uid="uid://byd323j6up5jl" path="res://src/resources/player2.tres" id="6_fkwoi"]
@@ -10,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://vbe1fls3hxqa" path="res://src/ui/fuel_value_bar.tscn" id="7_ki7d2"]
 [ext_resource type="Script" path="res://src/scripts/nodes/ui/MapView.cs" id="9_me7yt"]
 [ext_resource type="Resource" uid="uid://erj2eufe5jsx" path="res://src/resources/game_data.tres" id="10_rro3f"]
+[ext_resource type="Script" path="res://src/scripts/nodes/ui/ExitMenu.cs" id="12_7ba7v"]
+[ext_resource type="Texture2D" uid="uid://44svgcrvc7w3" path="res://Assets/Export/ExitButtonBig.png" id="12_dghod"]
+[ext_resource type="Texture2D" uid="uid://dbchchkhmd6qf" path="res://Assets/Export/ButtonIcons/AButtonBig.png" id="13_wyxqr"]
+[ext_resource type="Texture2D" uid="uid://cthq8tai200fw" path="res://Assets/Export/ButtonIcons/BButtonBig.png" id="14_2qdjd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5waq0"]
 bg_color = Color(0, 0, 0, 1)
@@ -21,7 +26,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_t4erg")
+theme = ExtResource("1_7ei3c")
+script = ExtResource("2_fhn3k")
 World = NodePath("Default/HBoxContainer/SubViewportContainer/SubViewport/World")
 
 [node name="Default" type="Control" parent="."]
@@ -155,3 +161,100 @@ grow_horizontal = 0
 grow_vertical = 0
 rotation = -1.57079
 Player = ExtResource("6_fkwoi")
+
+[node name="ExitMenu" type="Control" parent="." node_paths=PackedStringArray("_gameModeView")]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_7ba7v")
+_gameModeView = NodePath("..")
+
+[node name="BackGround" type="ColorRect" parent="ExitMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.294118)
+
+[node name="Center" type="CenterContainer" parent="ExitMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="TextureRect" parent="ExitMenu/Center"]
+custom_minimum_size = Vector2(1920, 250)
+layout_mode = 2
+texture = ExtResource("12_dghod")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ExitMenu/Center/Menu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 100
+text = "quit?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuControls" type="HBoxContainer" parent="ExitMenu/Center/Menu"]
+modulate = Color(1, 1, 1, 0.882353)
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -84.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="AButton" type="TextureRect" parent="ExitMenu/Center/Menu/MenuControls"]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+texture = ExtResource("13_wyxqr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ExitMenu/Center/Menu/MenuControls"]
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 20
+text = " Confirm"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="ExitMenu/Center/Menu/MenuControls"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="BButton" type="TextureRect" parent="ExitMenu/Center/Menu/MenuControls"]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+texture = ExtResource("14_2qdjd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="ExitMenu/Center/Menu/MenuControls"]
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 20
+text = " Cancel"
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="ExitMenu/Center/Menu/MenuControls"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2

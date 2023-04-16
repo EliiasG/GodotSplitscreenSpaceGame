@@ -22,7 +22,6 @@ public partial class LaserShooter : Shooter
         //beautiful
         Weapon.PlayerShip.Session.Level.Scene.ProjectilesParent.AddChild(laserBeam);
 
-        //maybe .GetParent is needed? not sure if GetCollider() actually gets the collider or the area/body
         if (_rayCast.GetCollider() is WeaponCollider weaponCollider)
         {
             PlayerShip ship = weaponCollider.Ship;

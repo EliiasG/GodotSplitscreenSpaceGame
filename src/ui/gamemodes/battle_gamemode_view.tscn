@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf1ua3nfd3f7v"]
+
+[ext_resource type="PackedScene" uid="uid://bl80mn2uslpdc" path="res://src/ui/gamemodes/gamemode_view.tscn" id="1_tnfwr"]
+[ext_resource type="PackedScene" uid="uid://bm634tnldtr4a" path="res://src/ui/gamemodes/elements/health_bars.tscn" id="2_8fgwh"]
+[ext_resource type="PackedScene" uid="uid://degstatwxl7np" path="res://src/ui/gamemodes/elements/life_counters.tscn" id="3_07cpd"]
+[ext_resource type="PackedScene" uid="uid://h00g7ycxhqno" path="res://src/ui/gamemodes/elements/reload_indicators.tscn" id="4_vp0ud"]
+
+[node name="GameModeView" instance=ExtResource("1_tnfwr")]
+
+[node name="HealthBars" parent="." index="1" node_paths=PackedStringArray("GameModeView") instance=ExtResource("2_8fgwh")]
+layout_mode = 1
+GameModeView = NodePath("..")
+
+[node name="LifeCounters" parent="." index="2" node_paths=PackedStringArray("GameModeView") instance=ExtResource("3_07cpd")]
+layout_mode = 1
+GameModeView = NodePath("..")
+
+[node name="ReloadIndicators" parent="." index="3" instance=ExtResource("4_vp0ud")]
+layout_mode = 1

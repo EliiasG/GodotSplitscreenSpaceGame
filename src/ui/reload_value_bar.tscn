@@ -8,7 +8,12 @@ offset_right = 192.0
 offset_bottom = 32.0
 script = ExtResource("1_mfc7q")
 
-[node name="ValueBar" parent="." instance=ExtResource("2_be2fc")]
+[node name="ReloadValueBar" parent="." instance=ExtResource("2_be2fc")]
 layout_mode = 2
 BackgroundColor = Color(0.270588, 0.290196, 0.415686, 1)
 BarColor = Color(0.309804, 0.643137, 0.721569, 1)
+
+[node name="AmmoValueBar" parent="." instance=ExtResource("2_be2fc")]
+layout_mode = 2
+BackgroundColor = Color(0.270588, 0.290196, 0.415686, 0)
+BarColor = Color(0, 0.713726, 0.145098, 0.658824)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgw1ieg6p0llq"]
 
-[ext_resource type="PackedScene" uid="uid://cy7vubpeckqqt" path="res://src/ui/gamemodes/gamemode_view.tscn" id="1_rdykq"]
+[ext_resource type="PackedScene" uid="uid://bl80mn2uslpdc" path="res://src/ui/gamemodes/gamemode_view.tscn" id="1_rdykq"]
 [ext_resource type="Script" path="res://src/scripts/nodes/ui/TagGameModeView.cs" id="2_7bdpx"]
 [ext_resource type="PackedScene" uid="uid://h00g7ycxhqno" path="res://src/ui/gamemodes/elements/reload_indicators.tscn" id="3_skirj"]
 [ext_resource type="PackedScene" uid="uid://c82avaft375r4" path="res://src/ui/gamemodes/elements/capture_indicators.tscn" id="4_uq4a2"]

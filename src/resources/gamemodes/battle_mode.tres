@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://io84rggwauj5"]
+
+[ext_resource type="Resource" uid="uid://mkhnhx4tfj3m" path="res://src/resources/weapons/weapon_collection.tres" id="1_r3htg"]
+[ext_resource type="PackedScene" uid="uid://cf1ua3nfd3f7v" path="res://src/ui/gamemodes/battle_gamemode_view.tscn" id="1_r7fu6"]
+[ext_resource type="Script" path="res://src/scripts/resources/gamemodes/BattleGameMode.cs" id="2_88t85"]
+
+[resource]
+script = ExtResource("2_88t85")
+PickupSpawnTime = 5.0
+PickupAmount = 0
+PlayerHealth = 0
+PlayerLives = 0
+_weaponCollection = ExtResource("1_r3htg")
+_gameModeView = ExtResource("1_r7fu6")

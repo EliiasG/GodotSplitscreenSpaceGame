@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dqytxw23kictt" path="res://src/resources/godot/theme.tres" id="1_u77ox"]
 [ext_resource type="Script" path="res://src/scripts/nodes/ui/WinScreen.cs" id="2_jwero"]
-[ext_resource type="Texture2D" uid="uid://cgo5cl7yvts7c" path="res://Assets/Export/ButtonIcons/AButtonBig.png" id="2_qnn2e"]
+[ext_resource type="Texture2D" uid="uid://32lhg78gsw3j" path="res://Assets/Export/ButtonIcons/AButtonBig.png" id="2_qnn2e"]
 [ext_resource type="Resource" uid="uid://erj2eufe5jsx" path="res://src/resources/game_data.tres" id="3_fp2yj"]
 [ext_resource type="PackedScene" uid="uid://jvvhqmt1s6kq" path="res://src/ui/main_menu.tscn" id="3_v20x5"]
 
